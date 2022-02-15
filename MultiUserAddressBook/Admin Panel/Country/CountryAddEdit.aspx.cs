@@ -20,6 +20,25 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
     {
         SqlString strCountryName = SqlString.Null;
         SqlString strCountryCode = SqlString.Null;
+        
+        String strErrorMessage = "";
+       if(txtCountryName.Text.Trim() == "")
+        {
+            strErrorMessage += "- Enter Country Name <br />";
+        }
+       if(txtCountryCode.Text.Trim() == "")
+        {
+            strErrorMessage += "-Enter Country Code <br />";
+        }
+        if (txtCountryName.Text.Trim() == "" && txtCountryCode.Text.Trim() == "")
+        {
+            strErrorMessage += "-Enter Country Name and Country Code";
+        }
+       if(strErrorMessage !="")
+        {
+           lblMessage.Text = strErrorMessage;
+            return;
+        }
 
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
         objConn.Open();

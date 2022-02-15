@@ -20,6 +20,7 @@
         </div>
         <div class="col-md-8">
             <asp:TextBox runat="server" ID="txtCountryName" CssClass="form-control"  ></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ErrorMessage="Enter CountryName" ControlToValidate="txtCountryName"></asp:RequiredFieldValidator>
         </div>
          <div class="col-md-4">
             Country Code :-
@@ -27,6 +28,7 @@
         </div>
          <div class="col-md-8">
             <asp:TextBox runat="server" ID="txtCountryCode" CssClass="form-control"  ></asp:TextBox>
+             <asp:RequiredFieldValidator runat="server" ErrorMessage="Enter Country Code" ControlToValidate="txtCountryCode"></asp:RequiredFieldValidator>
         </div>
         
     </div>
