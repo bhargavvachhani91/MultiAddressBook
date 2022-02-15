@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MultiUserAddressBook.master.cs" Inherits="MultiUserAddressBook_Contect_MultiUserAddressBook" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="container">
+                <div class="row">
+
+                    <nav c class="navbar navbar-expand-lg navbar-light bg-light " style="background-color: #3bb78f; background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);">
+                        <div class="container-fluid">
+                            <div class="navbar-brand">
+                                <h2>Address Book</h2>
+                            </div>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                    <li class="nav-item">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCountry" Text="Country" NavigateUrl="~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx">
+                                        </asp:HyperLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlState" Text="State" NavigateUrl="~/MultiUserAddressBook/Admin Panel/State/StateList.aspx">
+                                        </asp:HyperLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCity" Text="City" NavigateUrl="~/MultiUserAddressBook/Admin Panel/City/CityList.aspx">
+                                        </asp:HyperLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContactCategory" Text="ContactCategory" NavigateUrl="~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryList.aspx">
+                                        </asp:HyperLink>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContact" Text="Contact" NavigateUrl="~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx">
+                                        </asp:HyperLink>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <div class="col-md-4">
+                                <asp:Label runat="server"  ID="lblUserName" />
+
+                                <asp:LinkButton runat="server" ID="lbtnLogOut" Text="LogOut" CssClass="btn btn-dark btn-sm" OnClick="lbtnLogOut_Click" />
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="background-color: #3bb78f; background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);"
+                            class="text-lg-center">
+                            Footer
+                        <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
