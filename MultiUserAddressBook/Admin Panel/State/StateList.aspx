@@ -19,7 +19,7 @@
 
             <div class="row">
                 <div class="col-md-2">
-                    <asp:HyperLink runat="server" ID="hlAddState" Text="Add new State" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx"></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="hlAddState" Text="Add new State" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/State/SateAddEdit.aspx"></asp:HyperLink>
                 </div>
                 <div class="col-md-10">
                 </div>
@@ -46,7 +46,7 @@
 
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/AddressBook/AdminPanel/State/StateAddEdit.aspx?StateID="+Eval("StateID").ToString().Trim() %>'>
+                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx?StateID="+Eval("StateID").ToString().Trim() %>'>
                                 
                                 </asp:HyperLink>
 

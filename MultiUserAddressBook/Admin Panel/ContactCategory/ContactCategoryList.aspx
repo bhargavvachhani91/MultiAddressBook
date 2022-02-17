@@ -44,7 +44,7 @@
 
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/AddressBook/AdminPanel/ContactCategory/ContactCategoryAddEdit.aspx?ContactCategoryID="+Eval("ContactCategoryID").ToString().Trim() %>'>
+                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryAddEdit.aspx?ContactCategoryID="+Eval("ContactCategoryID").ToString().Trim() %>'>
                                 
                                 </asp:HyperLink>
                             </ItemTemplate>

@@ -103,10 +103,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 
     #region Button : cancel
 
-    protected void btnCancel_Click(object sender, EventArgs e)
+    /*protected void btnCancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx", true);
-    }
+    }*/
     #endregion Button : cancel
 
     #region Fill Controls
@@ -126,7 +126,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
             objCmd.CommandType = CommandType.StoredProcedure;
             objCmd.CommandText = "[dbo].[PR_Country_SelectByPK]";
             objCmd.Parameters.AddWithValue("@CountryID", CountryID.ToString().Trim());
-
+            if (Session["UserID"] != null)
+                objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
             SqlDataReader objSDR = objCmd.ExecuteReader();
 
             if (objSDR.HasRows)

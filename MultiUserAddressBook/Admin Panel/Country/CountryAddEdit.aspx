@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-8">
             <asp:Button runat="server" ID="btnSave" Text="Save" CssClass="btn btn-success" OnClick="btnSave_Click" />
-            <asp:Button runat="server" ID="btnCancel" Text="Cancel"  CssClass="btn btn-danger" OnClick="btnCancel_Click" />
+            <asp:HyperLink NavigateUrl="~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx" runat="server" ID="btnCancel" Text="Cancel"  CssClass="btn btn-danger" OnClick="btnCancel_Click" />
         </div>
     </div>
 </asp:Content>
