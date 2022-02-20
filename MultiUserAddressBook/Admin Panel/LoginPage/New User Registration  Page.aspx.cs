@@ -83,7 +83,12 @@ public partial class MultiUserAddressBook_Admin_Panel_LoginPage_New_User_Login_P
             objCmd.Parameters.AddWithValue("@Email", strEmail);
             objCmd.ExecuteNonQuery();
             objConn.Close();
-            txtUserName.Text.
+            txtUserName.Text = "";
+            txtPasswordLogin.Text = "";
+            txtDisplayName.Text = "";
+            txtMobileNo.Text = "";
+            txtEmail.Text = "";
+            txtUserName.Focus();
         }
         catch (Exception ex)
         {
