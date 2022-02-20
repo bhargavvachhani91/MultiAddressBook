@@ -1,19 +1,19 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    background-color: #08ffd1;
+    background-color: #082c25;
     font-family: 'Arial';
 }
 
-.login {
-    width: 421px;
+.Registration {
+     width: 421px;
     overflow: hidden;
     margin: auto;
     margin: 20 0 0 450px;
     padding: 80px;
     background: #23463f;
     border-radius: 15px;
-    height: 480px;
+    height: 600px;
 }
 
 h2 {
@@ -61,4 +61,3 @@ a {
     float: right;
     background-color: grey;
 }
-

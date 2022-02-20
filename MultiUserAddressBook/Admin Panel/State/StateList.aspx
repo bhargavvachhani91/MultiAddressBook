@@ -19,7 +19,7 @@
 
             <div class="row">
                 <div class="col-md-2">
-                    <asp:HyperLink runat="server" ID="hlAddState" Text="Add new State" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/State/SateAddEdit.aspx"></asp:HyperLink>
+                    <asp:HyperLink runat="server" ID="hlAddState" Text="Add new State" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx"></asp:HyperLink>
                 </div>
                 <div class="col-md-10">
                 </div>

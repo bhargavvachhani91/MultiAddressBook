@@ -41,6 +41,9 @@
                 <div class="row">
                     <div class="col-md-col-12">
                         <asp:Label runat="server" ID="lblMessage" EnableViewState="false" />
+                         <br />
+                         <br />      
+                        <asp:HyperLink runat="server" ID="hlRigistration" Text="New User Registration " NavigateUrl="~/MultiUserAddressBook/Admin Panel/LoginPage/New User Registration  Page.aspx" CssClass="text-dark bg-body" />
                     </div>
                 </div>
             </div>

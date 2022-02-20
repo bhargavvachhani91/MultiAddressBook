@@ -22,14 +22,14 @@
                     Country:
                 </div>
                 <div class="col-md-8">
-                    <asp:DropDownList ID="ddlCountryID" CssClass="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCountryID" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCountryID_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <br />
                 <div class="col-md-4">
                     State:
                 </div>
                 <div class="col-md-8">
-                    <asp:DropDownList ID="ddlStateID" CssClass="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlStateID" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlStateID_SelectedIndexChanged"></asp:DropDownList>
                 </div>
 
                 <div class="col-md-4">
@@ -74,6 +74,7 @@
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtWhatsappNo" runat="server" CssClass="form-control" />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Please Check Your Mobile Number" ControlToValidate="txtWhatsappNo" ValidationExpression="^([1-9]{1})([234789]{1})([0-9]{8})$"></asp:RegularExpressionValidator>
                 </div>
                 <br />
 
@@ -82,6 +83,7 @@
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Please Check your Email" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </div>
                 <br />
 
