@@ -80,6 +80,7 @@
                     <br />
                 </div>
                 <asp:Button runat="server" ID="btnLogin" Text="Save" CssClass="btn btn-dark btn-sm text-danger" BackColor="#08ffd1" textlight="" OnClick="btnLogin_Click" />
+                <asp:HyperLink runat="server" ID="hlGoTOLoginPage" Text="Go To LoginPage" CssClass="btn btn-success btn-sm text-dark text-center" NavigateUrl="~/MultiUserAddressBook/Admin Panel/LoginPage/LoginPage.aspx" />
                 <br />
                 <br />
                 <div class="row">

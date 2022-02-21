@@ -409,8 +409,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                     }
                     if (!objSDR["BirthDate"].Equals(DBNull.Value))
                     {
-                        DateTime bd = Convert.ToDateTime(objSDR["BirthDate"].ToString());
-                        txtBirthdate.Text = bd.ToShortDateString();
+                     
+                        txtBirthdate.Text = Convert.ToDateTime(objSDR["BirthDate"].ToString().Trim()).ToString("yyyy-MM-dd");
                     }
                     if (!objSDR["Email"].Equals(DBNull.Value))
                     {

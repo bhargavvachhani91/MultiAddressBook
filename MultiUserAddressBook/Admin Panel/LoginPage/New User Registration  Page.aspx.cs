@@ -56,6 +56,7 @@ public partial class MultiUserAddressBook_Admin_Panel_LoginPage_New_User_Login_P
             lblMessage.Text = strErroeMessage;
             return;
         }
+        
 
         SqlConnection objConn  = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
@@ -82,6 +83,7 @@ public partial class MultiUserAddressBook_Admin_Panel_LoginPage_New_User_Login_P
             strEmail = txtEmail.Text.Trim();
             objCmd.Parameters.AddWithValue("@Email", strEmail);
             objCmd.ExecuteNonQuery();
+            lblMessage.Text = "Your Registration Is Successfull";
             objConn.Close();
             txtUserName.Text = "";
             txtPasswordLogin.Text = "";

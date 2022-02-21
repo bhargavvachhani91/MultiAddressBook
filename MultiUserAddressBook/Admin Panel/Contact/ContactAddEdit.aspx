@@ -58,7 +58,7 @@
                     Birthdate:
                 </div>
                 <div class="col-md-8">
-                    <asp:TextBox ID="txtBirthdate" runat="server" CssClass="form-control" />
+                    <asp:TextBox ID="txtBirthdate" runat="server" CssClass="form-control" TextMode="Date" />
                 </div>
                 <br />
 
