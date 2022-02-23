@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,8 +33,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
             //Create Blank Object connetion
 
 
-
-            objConn.Open();
+            if (objConn.State != ConnectionState.Open)
+                objConn.Open();
             SqlCommand objcmd = objConn.CreateCommand();
             objcmd.CommandType = CommandType.StoredProcedure;
             objcmd.CommandText = "PR_Contact_SelectAll";
@@ -55,7 +56,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
         }
         finally
         {
-            objConn.Close();
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
         }
 
 
@@ -75,17 +77,31 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
 
             }
         }
+        else if (e.CommandName == "DeleteImage")
+        {
+            if(e.CommandArgument != null)
+            {
+                DeleteContactImage(Convert.ToInt32(e.CommandArgument.ToString()));
+            }
+        }
     }
     #endregion Row Commad
 
     #region Delete Record
-    private void DeleteRecord(SqlInt32 ContactID)
+    private void DeleteRecord(SqlInt32 ContactID )
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
         try
         {
-            objConn.Open();
+            if (objConn.State != ConnectionState.Open)
+                objConn.Open();
+            FileInfo file = new FileInfo(Server.MapPath("~/UserContent/" + ContactID.ToString() + ".jpg"));
+
+            if (file.Exists)
+            {
+                file.Delete();
+            }
 
             SqlCommand objcmd = objConn.CreateCommand();
             objcmd.CommandType = CommandType.StoredProcedure;
@@ -107,10 +123,61 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
         }
         finally
         {
-            objConn.Close();
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
         }
 
     }
     #endregion Delete Record
+    #region Delete Image
+    private void DeleteContactImage(SqlInt32 Id)
+    {
+        #region Set Connection
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
+        #endregion Set Connection
+
+        try
+        {
+            if (objConn.State != ConnectionState.Open)
+                objConn.Open();
+
+            #region Create Command and Set Parameters
+            SqlCommand objCmd = new SqlCommand("PR_Contact_DeleteImageByPKUserID", objConn);
+            objCmd.CommandType = CommandType.StoredProcedure;
+            objCmd.Parameters.AddWithValue("@ContactID", Id);
+            if (Session["UserID"] != null)
+                objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
+            objCmd.ExecuteNonQuery();
+
+            FileInfo file = new FileInfo(Server.MapPath("~/UserContent/" + Id.ToString() + ".jpg"));
+
+            if (file.Exists)
+            {
+                file.Delete();
+                lblMessage.Text = "Image Deleted Successfully!";
+            }
+            else
+            {
+                lblMessage.Text = "Image dosen't upload!";
+            }
+
+
+            #endregion Create Command and Set Parameters
+
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+        catch (Exception ex)
+        {
+            lblMessage.Text = ex.Message;
+        }
+        finally
+        {
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+    }
+    #endregion Delete Image
+
 
 }

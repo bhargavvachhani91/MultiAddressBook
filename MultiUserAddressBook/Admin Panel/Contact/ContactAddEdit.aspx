@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MultiUserAddressBook/Contect/MultiUserAddressBook.master" AutoEventWireup="true" CodeFile="ContactAddEdit.aspx.cs" Inherits="MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-   <div class="container">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h2>Contact Add/Edit Page</h2>
@@ -109,14 +109,19 @@
                     <asp:TextBox ID="txtLinkdINID" runat="server" CssClass="form-control" />
                 </div>
                 <br />
-
                 <div class="col-md-4">
                     Address:
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" />
                 </div>
-
+                <br />
+                <div class="col-md-4">
+                    Upload File:
+                </div>
+                <div class="col-md-8">
+                    <asp:FileUpload ID="fuFile" runat="server" CssClass="" BackColor="#ccffff" BorderColor="White" BorderStyle="Double" />
+                </div>
             </div>
         </div>
         <br />

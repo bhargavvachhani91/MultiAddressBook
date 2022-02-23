@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MultiUserAddressBook/Contect/MultiUserAddressBook.master" AutoEventWireup="true" CodeFile="ContactList.aspx.cs" Inherits="MultiUserAddressBook_Admin_Panel_Contact_ContactList" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div class="row" >
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="row">
         <div class="col-md-12">
             <h2>Contact List Page
             </h2>
@@ -14,7 +14,7 @@
             <asp:Label runat="server" ID="lblMessage" EnableViewState="False" Font-Bold="False" Font-Italic="False" ForeColor="Black"></asp:Label>
         </div>
     </div>
-    <div class="row" style="overflow-x:auto">
+    <div class="row" style="overflow-x: auto">
         <div class="col-md-12">
             <div class="col-md-2">
             </div>
@@ -24,7 +24,7 @@
             <div>
                 <asp:GridView ID="gvContact" runat="server" CssClass="table table-hover" OnRowCommand="gvContact_RowCommand" Height="192px" Width="1121px">
                     <Columns>
-                        
+
                         <asp:TemplateField HeaderText="Delete ">
                             <ItemTemplate>
                                 <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord"
@@ -42,11 +42,21 @@
                                 </asp:HyperLink>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Image">
+                            <ItemTemplate>
+                                <asp:Image runat="server" ID="imgImage" CssClass="img-fluid" hight="50" ImageUrl='<%# Eval("Filepath") %>'></asp:Image>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="ImageDelete">
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="Delete"  CssClass="btn btn-danger btn-sm" CommandName="DeleteImage" CommandArgument='<%#Eval("ContactID").ToString() %>'>
+
+                                </asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-
             </div>
-
         </div>
     </div>
 </asp:Content>
