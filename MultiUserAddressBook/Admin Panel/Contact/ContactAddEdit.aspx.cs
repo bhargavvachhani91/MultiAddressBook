@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -52,13 +49,6 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         SqlString strBloodGroup = SqlString.Null;
         SqlString strFaceBook = SqlString.Null;
         SqlString strLinkedId = SqlString.Null;
-        SqlString strFilePath = SqlString.Null;
-        SqlString strFileSize = SqlString.Null;
-        SqlString strFileExtemtion = SqlString.Null;
-
-        bool flag = false;
-        int i = 1;
-        string temp = "";
         #endregion Local Variable
 
         try
@@ -90,18 +80,14 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
             if (txtAddress.Text == "")
             {
-                strErrorMessage += "- Please Enter Email  <br />";
+                strErrorMessage += "- Please Enter Address  <br />";
             }
             if (txtEmail.Text == "")
             {
                 strErrorMessage += "- Please Enter Email  <br />";
             }
 
-            if (flag)
-            {
-                lblMessage.Text = " Please  " + temp ;
-                return;
-            }
+
             if (strErrorMessage != "")
             {
                 lblMessage.Text = strErrorMessage;
@@ -162,9 +148,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.StoredProcedure;
 
-            objCmd.Parameters.AddWithValue("@CountryID", strCountryId);
+
             if (Session["UserID"] != null)
                 objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+            objCmd.Parameters.AddWithValue("@CountryID", strCountryId);
             objCmd.Parameters.AddWithValue("@StateID", strStateId);
             objCmd.Parameters.AddWithValue("@CityID", strCityId);
             objCmd.Parameters.AddWithValue("@ContactCategoryID", strContactCategoryId);
@@ -177,9 +164,6 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             objCmd.Parameters.AddWithValue("@BloodGroup", strBloodGroup);
             objCmd.Parameters.AddWithValue("@FacebookID", strFaceBook);
             objCmd.Parameters.AddWithValue("@LinkedINID", strLinkedId);
-            objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
-            objCmd.Parameters.AddWithValue("@FileSize", strFileSize);
-            objCmd.Parameters.AddWithValue("@FileExtemtion", strFileExtemtion);
 
             #endregion Set Connection & Command Object
 
@@ -188,22 +172,22 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 #region Update Record
                 //Edit Mode
                 objCmd.CommandText = "PR_Contact_UpdateByPK";
-                objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                //objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
                 objCmd.ExecuteNonQuery();
-                string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
-                if (fuFile.HasFile)
-                {
-                    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
-                    {
-                        UploadImage(Convert.ToInt32(Request.QueryString["ContactID"]), FileExtention);
-                    }
-                    else
-                    {
-                        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
-                        return;
-                    }
-                }
-               
+                //string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
+                //if (fuFile.HasFile)
+                //{
+                //    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
+                //    {
+                //        UploadImage(Convert.ToInt32(Request.QueryString["ContactID"]), FileExtention);
+                //    }
+                //    else
+                //    {
+                //        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
+                //        return;
+                //    }
+                //}
+
                 Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
                 ddlCountryID.Focus();
                 #endregion Update Record
@@ -211,29 +195,32 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             else
             {
                 #region Add record
-                objCmd.CommandText = "PR_Contact_InsertUserID";
-                objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
-                objCmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+                objCmd.CommandText = "PR_Contact_Insert";
+
+
+               // objCmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
                 objCmd.ExecuteNonQuery();
-                ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
-                string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
-                if (fuFile.HasFile)
-                {
-                    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
-                    {
-                        UploadImage(ContactId, FileExtention);
-                    }
-                    else
-                    {
-                        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
-                        return;
-                    }
-                }
+
+
+                //ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
+
+                //string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
+                //if (fuFile.HasFile)
+                //{
+                //    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
+                //    {
+                //        UploadImage(ContactId, FileExtention);
+                //    }
+                //    else
+                //    {
+                //        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
+                //        return;
+                //    }
+                //}
                 #endregion Add record
                 #region Insert Record
                 //Add Mode
-                objCmd.CommandText = "PR_Contact_Insert";
-                objCmd.ExecuteNonQuery();
+                //objCmd.CommandText = "PR_Contact_Insert";
                 lblMessage.Text = "Data Inserted Successfully";
                 ddlCountryID.SelectedIndex = 0;
                 ddlStateID.SelectedIndex = 0;
@@ -267,10 +254,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         }
     }
 
-    private void UploadImage(object contactID, string fileExtention)
-    {
-        throw new NotImplementedException();
-    }
+
     #endregion Button : save
 
 
@@ -356,7 +340,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         objCmd.CommandText = "PR_City_SelectByState";
         if (Session["UserID"] != null)
             objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
-        
+
         if (ddlStateID.SelectedValue != "-1")
             objCmd.Parameters.AddWithValue("@StateID", Id);
         SqlDataReader objSDR = objCmd.ExecuteReader();
@@ -390,7 +374,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         objCmd.CommandType = CommandType.StoredProcedure;
         objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
         if (Session["UserID"] != null)
-            objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+            objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
         SqlDataReader objSDR = objCmd.ExecuteReader();
 
         if (objSDR.HasRows == true)
@@ -400,6 +384,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             ddlContactCategoryID.DataTextField = "ContactCategoryName";
             ddlContactCategoryID.DataBind();
         }
+
 
         ddlContactCategoryID.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
 
@@ -464,7 +449,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                     }
                     if (!objSDR["BirthDate"].Equals(DBNull.Value))
                     {
-                     
+
                         txtBirthdate.Text = Convert.ToDateTime(objSDR["BirthDate"].ToString().Trim()).ToString("yyyy-MM-dd");
                     }
                     if (!objSDR["Email"].Equals(DBNull.Value))
@@ -512,33 +497,37 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #endregion FillControl
 
     #region Upload Image
-    private void UploadImage(SqlInt32 Id, string FileExtention )
+    private void UploadImage(SqlInt32 Id, string FileExtention)
     {
         SqlString strFilePath = SqlString.Null;
         #region Connection
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
         #endregion Connection
 
-        try 
+        try
         {
-            if(objConn.State != ConnectionState.Open)
+            if (objConn.State != ConnectionState.Open)
                 objConn.Open();
 
-            strFilePath = "~/MultiUserAddressBook/Admin Panel/SaveUploadedFie/" + Id + ".jpg";
+            if (!Directory.Exists(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/")))
+            {
+                Directory.CreateDirectory(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/"));
+            }
+            fuFile.SaveAs(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id + ".jpg"));
+            long length = new FileInfo(Server.MapPath(strFilePath.ToString())).Length;
+
+            strFilePath = "~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id + ".jpg";
             SqlCommand objCmd = new SqlCommand("PR_Contact_UpdateImagePathByPKUserID", objConn);
             objCmd.CommandType = CommandType.StoredProcedure;
             objCmd.Parameters.AddWithValue("@ContactID", Id);
             objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
             if (Session["UserID"] != null)
                 objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
-
+            objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
+            objCmd.Parameters.AddWithValue("@FileSize", Convert.ToString(FileExtention));
+            objCmd.Parameters.AddWithValue("@FileExtention", Convert.ToString(length));
             objCmd.ExecuteNonQuery();
 
-            if (!Directory.Exists(Server.MapPath("~/UserContent/")))
-            {
-                Directory.CreateDirectory(Server.MapPath("~/UserContent/"));
-            }
-            fuFile.SaveAs(Server.MapPath("~/UserContent/" + Id + ".jpg"));
 
             if (objConn.State == ConnectionState.Open)
                 objConn.Close();

@@ -96,7 +96,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
         {
             if (objConn.State != ConnectionState.Open)
                 objConn.Open();
-            FileInfo file = new FileInfo(Server.MapPath("~/UserContent/" + ContactID.ToString() + ".jpg"));
+            FileInfo file = new FileInfo(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFie/" + ContactID.ToString() + ".jpg"));
 
             if (file.Exists)
             {
@@ -149,7 +149,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
                 objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
             objCmd.ExecuteNonQuery();
 
-            FileInfo file = new FileInfo(Server.MapPath("~/UserContent/" + Id.ToString() + ".jpg"));
+            FileInfo file = new FileInfo(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id.ToString() + ".jpg"));
 
             if (file.Exists)
             {
