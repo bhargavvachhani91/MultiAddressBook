@@ -155,6 +155,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
             {
                 file.Delete();
                 lblMessage.Text = "Image Deleted Successfully!";
+                FillGridView();
             }
             else
             {

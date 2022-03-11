@@ -9,12 +9,14 @@ using System.Web.UI.WebControls;
 
 public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : System.Web.UI.Page
 {
+    public object ConnectionStrings { get; private set; }
+    
     #region Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
         {
-            FillDropDownContactCategoryList();
+            //FillDropDownContactCategoryList();
             FillDropDownCountryList();
             if (Request.QueryString["ContactID"] != null)
             {
@@ -28,12 +30,14 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     }
     #endregion Page Load
 
+
     #region Button : save
     protected void btnSave_Click(object sender, EventArgs e)
     {
         #region Local Variable
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
 
+        SqlInt32 ContctID = SqlInt32.Null;
         SqlInt32 strCountryId = SqlInt32.Null;
         SqlInt32 strStateId = SqlInt32.Null;
         SqlInt32 strCityId = SqlInt32.Null;
@@ -69,10 +73,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             {
                 strErrorMessage += "- Select City <br />";
             }
-            if (ddlContactCategoryID.SelectedIndex == 0)
-            {
-                strErrorMessage += "- Select Contact Category <br />";
-            }
+            //if (ddlContactCategoryID.SelectedIndex == 0)
+            //{
+              //  strErrorMessage += "- Select Contact Category <br />";
+            //}
             if (txtContactName.Text == "")
             {
                 strErrorMessage += "- Please Enter Contact Name <br />";
@@ -106,8 +110,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             if (ddlCityID.SelectedIndex > 0)
                 strCityId = Convert.ToInt32(ddlCityID.SelectedValue);
 
-            if (ddlContactCategoryID.SelectedIndex > 0)
-                strContactCategoryId = Convert.ToInt32(ddlContactCategoryID.SelectedValue);
+            //if (ddlContactCategoryID.SelectedIndex > 0)
+            // strContactCategoryId = Convert.ToInt32(ddlContactCategoryID.SelectedValue);
 
             if (txtContactName.Text.Trim() != "")
                 strContactName = txtContactName.Text.Trim();
@@ -167,7 +171,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
             #endregion Set Connection & Command Object
 
-            if (Request.QueryString["ContactID"] != null)
+            if (RouteData.Values["ContactID"] != null)
             {
                 #region Update Record
                 //Edit Mode
@@ -198,25 +202,27 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 objCmd.CommandText = "PR_Contact_Insert";
 
 
-               // objCmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+                objCmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
                 objCmd.ExecuteNonQuery();
 
+                SqlInt32 ContactID = 0;
+                ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
 
-                //ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
+                string FileType = Path.GetExtension(fuFile.FileName).ToLower();
 
-                //string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
-                //if (fuFile.HasFile)
-                //{
-                //    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
-                //    {
-                //        UploadImage(ContactId, FileExtention);
-                //    }
-                //    else
-                //    {
-                //        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
-                //        return;
-                //    }
-                //}
+                if (fuFile.HasFile)
+                {
+                    if (FileType == ".jpge" || FileType == ".jpg" || FileType == ".png" || FileType == ".gif")
+                    {
+                        UploadImage(ContactId, "Image");
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
+                        return;
+                    }
+                }
                 #endregion Add record
                 #region Insert Record
                 //Add Mode
@@ -225,7 +231,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 ddlCountryID.SelectedIndex = 0;
                 ddlStateID.SelectedIndex = 0;
                 ddlCityID.SelectedIndex = 0;
-                ddlContactCategoryID.SelectedIndex = 0;
+                //ddlContactCategoryID.SelectedIndex = 0;
                 txtEmail.Text = "";
                 txtAddress.Text = "";
                 txtContactName.Text = "";
@@ -362,35 +368,35 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
 
     #region Fill Drop Down Contact Category
-    protected void FillDropDownContactCategoryList()
-    {
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+    //protected void FillDropDownContactCategoryList()
+    //{
+    //    SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        if (objConn.State != ConnectionState.Open)
+    //    if (objConn.State != ConnectionState.Open)
 
-            objConn.Open();
+    //        objConn.Open();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
-        if (Session["UserID"] != null)
-            objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
-        SqlDataReader objSDR = objCmd.ExecuteReader();
+    //    SqlCommand objCmd = objConn.CreateCommand();
+    //    objCmd.CommandType = CommandType.StoredProcedure;
+    //    objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
+    //    if (Session["UserID"] != null)
+    //        objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+    //    SqlDataReader objSDR = objCmd.ExecuteReader();
 
-        if (objSDR.HasRows == true)
-        {
-            ddlContactCategoryID.DataSource = objSDR;
-            ddlContactCategoryID.DataValueField = "ContactCategoryID";
-            ddlContactCategoryID.DataTextField = "ContactCategoryName";
-            ddlContactCategoryID.DataBind();
-        }
+    //    if (objSDR.HasRows == true)
+    //    {
+    //        ddlContactCategoryID.DataSource = objSDR;
+    //        ddlContactCategoryID.DataValueField = "ContactCategoryID";
+    //        ddlContactCategoryID.DataTextField = "ContactCategoryName";
+    //        ddlContactCategoryID.DataBind();
+    //    }
 
 
-        ddlContactCategoryID.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
+    //    ddlContactCategoryID.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
 
-        if (objConn.State == ConnectionState.Open)
-            objConn.Close();
-    }
+    //    if (objConn.State == ConnectionState.Open)
+    //        objConn.Close();
+    //}
     #endregion Fill Drop Down Contact Category
 
 
@@ -400,6 +406,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
     }
     #endregion Button : Cancel
+
 
     #region FillControl
     private void FillControlls(SqlInt32 Id)
@@ -426,10 +433,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                     {
                         txtContactName.Text = objSDR["ContactName"].ToString();
                     }
-                    if (!objSDR["ContactCategoryID"].Equals(DBNull.Value))
-                    {
-                        ddlContactCategoryID.SelectedValue = objSDR["ContactCategoryID"].ToString();
-                    }
+                    //if (!objSDR["ContactCategoryID"].Equals(DBNull.Value))
+                    //{
+                    //    ddlContactCategoryID.SelectedValue = objSDR["ContactCategoryID"].ToString();
+                    //}
                     if (!objSDR["CityID"].Equals(DBNull.Value))
                     {
                         ddlCityID.SelectedValue = objSDR["CityID"].ToString();
@@ -496,6 +503,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     }
     #endregion FillControl
 
+
     #region Upload Image
     private void UploadImage(SqlInt32 Id, string FileExtention)
     {
@@ -509,20 +517,26 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             if (objConn.State != ConnectionState.Open)
                 objConn.Open();
 
+            strFilePath = "~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id + ".jpg";
+
             if (!Directory.Exists(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/")))
             {
                 Directory.CreateDirectory(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/"));
             }
+
             fuFile.SaveAs(Server.MapPath("~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id + ".jpg"));
             long length = new FileInfo(Server.MapPath(strFilePath.ToString())).Length;
 
-            strFilePath = "~/MultiUserAddressBook/Admin Panel/SaveUploadedFile/" + Id + ".jpg";
+
             SqlCommand objCmd = new SqlCommand("PR_Contact_UpdateImagePathByPKUserID", objConn);
             objCmd.CommandType = CommandType.StoredProcedure;
-            objCmd.Parameters.AddWithValue("@ContactID", Id);
-            objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
+
+
+
             if (Session["UserID"] != null)
                 objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
+
+            objCmd.Parameters.AddWithValue("@ContactID", Id);
             objCmd.Parameters.AddWithValue("@FilePath", strFilePath);
             objCmd.Parameters.AddWithValue("@FileSize", Convert.ToString(FileExtention));
             objCmd.Parameters.AddWithValue("@FileExtention", Convert.ToString(length));
@@ -545,6 +559,42 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     }
     #endregion Upload Image
 
+    #region CBL ContactCategory
+   private void FillCBLContactCategory ()
+    {
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
+        try
+        {
+           if (objConn.State != ConnectionState.Open)
+                objConn.Open();
+
+            SqlCommand objCmd = new SqlCommand();
+            objCmd.CommandType = CommandType.StoredProcedure;
+            objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
+
+            SqlDataReader objSDR = objCmd.ExecuteReader();
+            if (objSDR.HasRows)
+            {
+                cblContactCategory.DataSource = objSDR;
+                cblContactCategory.DataBind();
+                cblContactCategory.DataTextField = "ContactCategoryName";
+                cblContactCategory.DataValueField = "ContactCategoryID";
+            }
+
+           if (objConn.State == ConnectionState.Open)
+                objConn.Close ();
+        }
+        catch (Exception ex)
+        {
+            lblMessage.Text = ex.Message + ex;
+        }
+        finally
+        {
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+    }
+    #endregion CBL ContactCategory
     protected void ddlCountryID_SelectedIndexChanged(object sender, EventArgs e)
     {
         ddlStateID.Items.Clear();

@@ -22,7 +22,7 @@
                 <asp:HyperLink runat="server" ID="hlAddState" Text="Add new Contact" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx"></asp:HyperLink>
             </div>
             <div>
-                <asp:GridView ID="gvContact" runat="server" CssClass="table table-hover" OnRowCommand="gvContact_RowCommand" Height="192px" Width="1121px">
+                <asp:GridView ID="gvContact" runat="server" CssClass="table table-hover" OnRowCommand="gvContact_RowCommand" Height="192px" Width="1121px" AutoGenerateColumns="False">
                     <Columns>
 
                         <asp:TemplateField HeaderText="Delete ">
@@ -49,11 +49,27 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="ImageDelete">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="Delete"  CssClass="btn btn-danger btn-sm" CommandName="DeleteImage" CommandArgument='<%#Eval("ContactID").ToString() %>'>
+                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteImage" CommandArgument='<%#Eval("ContactID").ToString() %>'>
 
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:BoundField DataField="FileExtention" HeaderText="File Type" />
+                        <asp:BoundField DataField="FileSize" HeaderText="File Size" />
+                        
+                        <asp:BoundField DataField="CityName" HeaderText="City Name" />
+                        <asp:BoundField DataField="StateName" HeaderText="State Name" />
+                        <asp:BoundField DataField="CountryName" HeaderText="Country Name" />
+                        
+                        <asp:BoundField DataField="WhatsappNo" HeaderText="Whatsapp No" />
+                        <asp:BoundField DataField="BirthDate" HeaderText="Birth Date" />
+                        <asp:BoundField DataField="Email" HeaderText="Email Id" />
+                        <asp:BoundField DataField="Age" HeaderText="Age" />
+                        <asp:BoundField DataField="BloodGroup" HeaderText="Blood Group" />
+                        <asp:BoundField DataField="FacebookID" HeaderText="Facebook Id" />
+                        <asp:BoundField DataField="LinkedINID" HeaderText="Linkedin Id" />
+                        <asp:BoundField DataField="Address" HeaderText="Address" />
+
                     </Columns>
                 </asp:GridView>
             </div>

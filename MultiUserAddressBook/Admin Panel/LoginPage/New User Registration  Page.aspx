@@ -31,6 +31,7 @@
                         </div>
                         <div class="col-md-8">
                             <asp:TextBox runat="server" ID="txtUserName" type="text" name="Uname" placeholder="Username" Width="216px" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter Your UserName" ControlToValidate="txtUserName" Display="Dynamic"></asp:RequiredFieldValidator>
                             <br />
                             <br />
                         </div>
@@ -45,6 +46,7 @@
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox runat="server" ID="txtPasswordLogin" type="password" name="Pass" placeholder="Password" Width="216px" />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Your Password" ControlToValidate="txtPasswordLogin" Display="Dynamic"></asp:RequiredFieldValidator>
                     <br />
                     <br />
                 </div>
@@ -56,6 +58,7 @@
                     </div>
                     <div class="col-md-8">
                         <asp:TextBox runat="server" ID="txtDisplayName" type="text" name="DName" placeholder="DisplayName" Width="214px" />
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter Your DisplayName" ControlToValidate="txtDisplayName" Display="Dynamic"></asp:RequiredFieldValidator>
                         <br />
                         <br />
                     </div>
@@ -67,7 +70,7 @@
                     </div>
                     <div class="col-md-8">
                         <asp:TextBox runat="server" ID="txtMobileNo" type="Number" name="MobileNo" placeholder="MobileNo" Width="216px" />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter Your Mobile Number" ControlToValidate="txtMobileNo" ForeColor="Red" ValidationExpression="^([1-9]{1})([234789]{1})([0-9]{8})$"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Enter Your Mobile Number" ControlToValidate="txtMobileNo" ForeColor="Red" ValidationExpression="^([1-9]{1})([234789]{1})([0-9]{8})$" Display="Dynamic"></asp:RegularExpressionValidator>
                         <br />
                         <br />
                     </div>
@@ -78,7 +81,7 @@
                     </div>
                     <div class="col-md-8">
                         <asp:TextBox runat="server" ID="txtEmail" type="txt" name="Email" placeholder="Email" Width="214px" />
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter your Email" ControlToValidate="txtEmail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Enter your Email" ControlToValidate="txtEmail" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"></asp:RegularExpressionValidator>
                         <br />
                         <br />
                     </div>
