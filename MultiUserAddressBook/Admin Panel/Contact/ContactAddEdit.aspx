@@ -47,8 +47,7 @@
                 <div class="col-md-8">
                     <asp:CheckBoxList runat="server" ID="cblContactCategory" />
                     <%--<asp:DropDownList ID="ddlContactCategoryID" CssClass="form-control" runat="server"></asp:DropDownList>--%>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Select ContactCategory" ControlToValidate="ddlContactCategoryID" Display="Dynamic" ValidationGroup="Cform"></asp:RequiredFieldValidator>
-
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Select ContactCategory" ControlToValidate="cblContactCategory" Display="Dynamic" ValidationGroup="Cform" InitialValue="0"></asp:RequiredFieldValidator>----%>
                 </div>
                 <div class="col-md-4">
                     Contact Name:

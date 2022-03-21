@@ -16,8 +16,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     {
         if (!Page.IsPostBack)
         {
-            //FillDropDownContactCategoryList();
+            //FillDropDownContactCategoryList(); 
             FillDropDownCountryList();
+            FillDropDownContactCategoryList();
+            //FillCBLContactCategory ();
             if (Request.QueryString["ContactID"] != null)
             {
                 lblMessage.Text = "Edit Mode | ContactID " + Request.QueryString["ContactID"].Trim();
@@ -37,7 +39,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         #region Local Variable
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
 
-        SqlInt32 ContctID = SqlInt32.Null;
+        
         SqlInt32 strCountryId = SqlInt32.Null;
         SqlInt32 strStateId = SqlInt32.Null;
         SqlInt32 strCityId = SqlInt32.Null;
@@ -73,10 +75,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             {
                 strErrorMessage += "- Select City <br />";
             }
-            //if (ddlContactCategoryID.SelectedIndex == 0)
-            //{
-              //  strErrorMessage += "- Select Contact Category <br />";
-            //}
+            if (cblContactCategory.SelectedIndex == 0)
+            {
+              strErrorMessage += "- Select Contact Category <br />";
+            }
             if (txtContactName.Text == "")
             {
                 strErrorMessage += "- Please Enter Contact Name <br />";
@@ -110,8 +112,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             if (ddlCityID.SelectedIndex > 0)
                 strCityId = Convert.ToInt32(ddlCityID.SelectedValue);
 
-            //if (ddlContactCategoryID.SelectedIndex > 0)
-            // strContactCategoryId = Convert.ToInt32(ddlContactCategoryID.SelectedValue);
+            if (cblContactCategory.SelectedIndex > 0)
+            strContactCategoryId = Convert.ToInt32(cblContactCategory.SelectedValue);
 
             if (txtContactName.Text.Trim() != "")
                 strContactName = txtContactName.Text.Trim();
@@ -176,21 +178,21 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 #region Update Record
                 //Edit Mode
                 objCmd.CommandText = "PR_Contact_UpdateByPK";
-                //objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
                 objCmd.ExecuteNonQuery();
-                //string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
-                //if (fuFile.HasFile)
-                //{
-                //    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
-                //    {
-                //        UploadImage(Convert.ToInt32(Request.QueryString["ContactID"]), FileExtention);
-                //    }
-                //    else
-                //    {
-                //        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
-                //        return;
-                //    }
-                //}
+                string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
+                if (fuFile.HasFile)
+                {
+                    if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
+                    {
+                        UploadImage(Convert.ToInt32(Request.QueryString["ContactID"]), FileExtention);
+                    }
+                    else
+                    {
+                        lblMessage.Text = "Please Upload Valid File(File must have .jpg or .jpge or .png or .gif extention).";
+                        return;
+                    }
+                }
 
                 Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
                 ddlCountryID.Focus();
@@ -208,6 +210,19 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
                 SqlInt32 ContactID = 0;
                 ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
+
+                foreach (ListItem liContactCategoryID in cblContactCategory.Items)
+                {
+                    if (liContactCategoryID.Selected)
+                    {
+                        SqlCommand objCmdContactCategory = objConn.CreateCommand();
+                        objCmdContactCategory.CommandType = CommandType.StoredProcedure;
+                        objCmdContactCategory.CommandText = "PR_ContactWiseContactCategory_Insert";
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactID",ContactID.ToString());
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactCategoryID", liContactCategoryID.Value.ToString());
+                        objCmdContactCategory.ExecuteNonQuery();
+                    }
+                }
 
                 string FileType = Path.GetExtension(fuFile.FileName).ToLower();
 
@@ -231,7 +246,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 ddlCountryID.SelectedIndex = 0;
                 ddlStateID.SelectedIndex = 0;
                 ddlCityID.SelectedIndex = 0;
-                //ddlContactCategoryID.SelectedIndex = 0;
+                cblContactCategory.SelectedIndex = 0;
                 txtEmail.Text = "";
                 txtAddress.Text = "";
                 txtContactName.Text = "";
@@ -368,35 +383,36 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
 
     #region Fill Drop Down Contact Category
-    //protected void FillDropDownContactCategoryList()
-    //{
-    //    SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+    protected void FillDropDownContactCategoryList()
+    {
+        //CommonDropDownListMethods.FillContactCategoryCheckBox(cblContactCategory, Convert.ToInt32(Session["UserId"]));
+        //SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-    //    if (objConn.State != ConnectionState.Open)
+        //if (objConn.State != ConnectionState.Open)
 
-    //        objConn.Open();
+        //    objConn.Open();
 
-    //    SqlCommand objCmd = objConn.CreateCommand();
-    //    objCmd.CommandType = CommandType.StoredProcedure;
-    //    objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
-    //    if (Session["UserID"] != null)
-    //        objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
-    //    SqlDataReader objSDR = objCmd.ExecuteReader();
+        //SqlCommand objCmd = objConn.CreateCommand();
+        //objCmd.CommandType = CommandType.StoredProcedure;
+        //objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
+        //if (Session["UserID"] != null)
+        //    objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+        //SqlDataReader objSDR = objCmd.ExecuteReader();
 
-    //    if (objSDR.HasRows == true)
-    //    {
-    //        ddlContactCategoryID.DataSource = objSDR;
-    //        ddlContactCategoryID.DataValueField = "ContactCategoryID";
-    //        ddlContactCategoryID.DataTextField = "ContactCategoryName";
-    //        ddlContactCategoryID.DataBind();
-    //    }
+        //if (objSDR.HasRows == true)
+        //{
+        //    ddlContactCategoryID.DataSource = objSDR;
+        //    ddlContactCategoryID.DataValueField = "ContactCategoryID";
+        //    ddlContactCategoryID.DataTextField = "ContactCategoryName";
+        //    ddlContactCategoryID.DataBind();
+        //}
 
 
-    //    ddlContactCategoryID.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
+        //ddlContactCategoryID.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
 
-    //    if (objConn.State == ConnectionState.Open)
-    //        objConn.Close();
-    //}
+        //if (objConn.State == ConnectionState.Open)
+        //    objConn.Close();
+    }
     #endregion Fill Drop Down Contact Category
 
 
@@ -433,10 +449,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                     {
                         txtContactName.Text = objSDR["ContactName"].ToString();
                     }
-                    //if (!objSDR["ContactCategoryID"].Equals(DBNull.Value))
-                    //{
-                    //    ddlContactCategoryID.SelectedValue = objSDR["ContactCategoryID"].ToString();
-                    //}
+                    if (!objSDR["ContactCategoryID"].Equals(DBNull.Value))
+                    {
+                       cblContactCategory.SelectedValue = objSDR["ContactCategoryID"].ToString();
+                    }
                     if (!objSDR["CityID"].Equals(DBNull.Value))
                     {
                         ddlCityID.SelectedValue = objSDR["CityID"].ToString();
@@ -559,30 +575,31 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     }
     #endregion Upload Image
 
-    #region CBL ContactCategory
-   private void FillCBLContactCategory ()
+    #region Add Contact Category
+    private void AddContactCategory (SqlInt32 ID)
     {
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
         try
         {
-           if (objConn.State != ConnectionState.Open)
+            if (objConn.State != ConnectionState.Open)
                 objConn.Open();
-
-            SqlCommand objCmd = new SqlCommand();
-            objCmd.CommandType = CommandType.StoredProcedure;
-            objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
-
-            SqlDataReader objSDR = objCmd.ExecuteReader();
-            if (objSDR.HasRows)
+            foreach (ListItem item in cblContactCategory.Items)
             {
-                cblContactCategory.DataSource = objSDR;
-                cblContactCategory.DataBind();
-                cblContactCategory.DataTextField = "ContactCategoryName";
-                cblContactCategory.DataValueField = "ContactCategoryID";
+                if (item.Selected)
+                {
+                    SqlCommand objCmd = new SqlCommand("PR_ContactWiseContactCategory_Insert",objConn);
+                    objCmd.CommandType = CommandType.StoredProcedure;
+                    objCmd.Parameters.AddWithValue("@ContactCategoryID", Convert.ToInt32(item.Value));
+                    if (Session["UserID"] != null)
+                        objCmd.Parameters.AddWithValue("UserID",Convert.ToInt32(item.Value));
+                    objCmd.Parameters.AddWithValue("ContactID", ID);
+                    objCmd.ExecuteNonQuery();
+                }
             }
 
-           if (objConn.State == ConnectionState.Open)
-                objConn.Close ();
+
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
         }
         catch (Exception ex)
         {
@@ -594,7 +611,117 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 objConn.Close();
         }
     }
+    #endregion Add Contact Category
+
+    #region CBL ContactCategory
+    //private void FillCBLContactCategory ()
+    //{
+    //    SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
+    //    try
+    //    {
+    //        if (objConn.State != ConnectionState.Open)
+    //            objConn.Open();
+
+    //        SqlCommand objCmd = new SqlCommand();
+    //        objCmd.CommandType = CommandType.StoredProcedure;
+    //        objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
+
+    //        SqlDataReader objSDR = objCmd.ExecuteReader();
+    //        if (objSDR.HasRows)
+    //        {
+    //            cblContactCategory.DataSource = objSDR;
+    //            cblContactCategory.DataBind();
+    //            cblContactCategory.DataTextField = "ContactCategoryName";
+    //            cblContactCategory.DataValueField = "ContactCategoryID";
+    //        }
+
+    //       if (objConn.State == ConnectionState.Open)
+    //            objConn.Close ();
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        lblMessage.Text = ex.Message + ex;
+    //    }
+    //    finally
+    //    {
+    //        if (objConn.State == ConnectionState.Open)
+    //            objConn.Close();
+    //    }
+    //}
     #endregion CBL ContactCategory
+
+    #region Delete ContactCategory
+    private void DeleteContactCategory(SqlInt32 ID)
+    {
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
+        try
+        {
+            if (objConn.State != ConnectionState.Open)
+                objConn.Open();
+            SqlCommand objCmd = new SqlCommand("",objConn);
+            objCmd.CommandType = CommandType.StoredProcedure;
+            objCmd.Parameters.AddWithValue("ContactID", ID);
+            if (Session["UserID"] != null)
+                objCmd.Parameters.AddWithValue("UserID", Convert.ToInt32(Session["UserID"]));
+                if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+        catch (SqlException ex)
+        {
+            lblMessage.Text = ex.Message + ex;
+        }
+        finally
+        {
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+    }
+    #endregion Delete ContactCategory
+
+    #region Fill Contact Category ChechBox
+    private void FillContactCategoryCheckBoxs()
+    {
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+
+        try
+        {
+            if (objConn.State != ConnectionState.Open)
+                objConn.Open();
+
+            SqlCommand objCmd = new SqlCommand("",objConn);
+            objCmd.CommandType= CommandType.StoredProcedure;
+            if(Session["UserID"] !=null)
+                objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+            objCmd.Parameters.AddWithValue("ContactID",ID);
+            SqlDataReader objSDR = objCmd.ExecuteReader();
+
+            if (objSDR.Read())
+            {
+                while (objSDR.Read())
+                {
+                    if (objSDR["SelectorNot"].ToString() == "Selected")
+                    {
+                        cblContactCategory.Items.FindByValue(objSDR["ContactCategory"].ToString()).Selected = true;
+                    }
+                }
+            }
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+
+        }
+        catch (Exception ex)
+        {
+            lblMessage.Text = ex.Message + ex;           
+        }
+        finally
+        {
+            if (objConn.State == ConnectionState.Open)
+                objConn.Close();
+        }
+    }
+
+
+    #endregion Fill Contact Category ChechBox
     protected void ddlCountryID_SelectedIndexChanged(object sender, EventArgs e)
     {
         ddlStateID.Items.Clear();
