@@ -37,7 +37,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
                 objConn.Open();
             SqlCommand objcmd = objConn.CreateCommand();
             objcmd.CommandType = CommandType.StoredProcedure;
-            objcmd.CommandText = "PR_Contact_SelectAll";
+            objcmd.CommandText = "PR_Contact_SelectAllByPK_UserID";
             if (Session["UserID"] != null)
                 objcmd.Parameters.AddWithValue("UserID", Session["UserID"]);
             SqlDataReader objSDR = objcmd.ExecuteReader();
@@ -105,7 +105,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
 
             SqlCommand objcmd = objConn.CreateCommand();
             objcmd.CommandType = CommandType.StoredProcedure;
-            objcmd.CommandText = "[dbo].[PR_Contact_DeleteByPK]";
+            objcmd.CommandText = "[dbo].[PR_ContactWiseContactCategory_DeleteByContactIDUserID]";
             if (Session["UserID"] != null)
                 objcmd.Parameters.AddWithValue("UserID", Session["UserID"]);
             objcmd.Parameters.AddWithValue("@ContactID", ContactID.ToString().Trim());
@@ -179,6 +179,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
         }
     }
     #endregion Delete Image
+
+
 
 
 }

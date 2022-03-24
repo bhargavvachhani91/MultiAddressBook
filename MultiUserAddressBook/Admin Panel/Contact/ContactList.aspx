@@ -54,13 +54,13 @@
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="FileExtention" HeaderText="File Type" />
-                        <asp:BoundField DataField="FileSize" HeaderText="File Size" />
+                        <%--<asp:BoundField DataField="FileExtention" HeaderText="File Type" />
+                        <asp:BoundField DataField="FileSize" HeaderText="File Size" />--%>
                         
                         <asp:BoundField DataField="CityName" HeaderText="City Name" />
                         <asp:BoundField DataField="StateName" HeaderText="State Name" />
                         <asp:BoundField DataField="CountryName" HeaderText="Country Name" />
-                        
+                        <asp:BoundField DataField="ContactName" HeaderText="Contact Name" />
                         <asp:BoundField DataField="WhatsappNo" HeaderText="Whatsapp No" />
                         <asp:BoundField DataField="BirthDate" HeaderText="Birth Date" />
                         <asp:BoundField DataField="Email" HeaderText="Email Id" />
@@ -69,7 +69,7 @@
                         <asp:BoundField DataField="FacebookID" HeaderText="Facebook Id" />
                         <asp:BoundField DataField="LinkedINID" HeaderText="Linkedin Id" />
                         <asp:BoundField DataField="Address" HeaderText="Address" />
-
+                        <asp:BoundField DataField="ContactCategoryNames" HeaderText="CategoryName" />
                     </Columns>
                 </asp:GridView>
             </div>

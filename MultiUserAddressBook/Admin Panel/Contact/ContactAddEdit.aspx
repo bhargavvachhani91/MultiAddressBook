@@ -129,6 +129,8 @@
                 </div>
                 <div class="col-md-8">
                     <asp:FileUpload ID="fuFile" runat="server" CssClass="" BackColor="#ccffff" BorderColor="White" BorderStyle="Double" />
+                                <asp:Image runat="server" ID="imgImage" CssClass="img-fluid" hight="300" Width="300" ImageUrl='<%# Eval("Filepath") %>'></asp:Image>
+
                 </div>
             </div>
         </div>
