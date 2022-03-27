@@ -1,0 +1,509 @@
+﻿++Solution 'NewWebSite2' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:NewWebSite2.sln
+++NewWebSite2
+i:{00000000-0000-0000-0000-000000000000}:NewWebSite2
+++Bin
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\
+++MultiUserAddressBook
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\
+++Admin Panel
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\
+++City
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\city\
+++Contact
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contact\
+++ContactCategory
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contactcategory\
+++Country
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\country\
+++FileUpload
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\fileupload\
+++FileUpload.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\fileupload\fileupload.aspx
+++LoginPage
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\loginpage\
+++State
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\state\
+++Default.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\default.aspx
+++Contect
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\
+++css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\
+++js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\
+++MultiUserAddressBook.master
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\multiuseraddressbook.master
+++packages
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\
+++.gitattributes
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\.gitattributes
+++.gitignore
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\.gitignore
+++NewWebSite2.sln
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\newwebsite2.sln
+++packages.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages.config
+++Web.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\web.config
+++roslyn
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\microsoft.codedom.providers.dotnetcompilerplatform.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\lib\net45\microsoft.codedom.providers.dotnetcompilerplatform.dll
+++CityAddEdit.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\city\cityaddedit.aspx
+++CityList.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\city\citylist.aspx
+++ContactAddEdit.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contact\contactaddedit.aspx
+++ContactList.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contact\contactlist.aspx
+++ContactCategoryAddEdit.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contactcategory\contactcategoryaddedit.aspx
+++ContactCategoryList.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contactcategory\contactcategorylist.aspx
+++CountryAddEdit.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\country\countryaddedit.aspx
+++CountryList.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\country\countrylist.aspx
+++FileUpload.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\fileupload\fileupload.aspx.cs
+++LoginPage.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\loginpage\loginpage.aspx
+++New User Registration  Page.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\loginpage\new user registration  page.aspx
+++StateAddEdit.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\state\stateaddedit.aspx
+++StateList.aspx
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\state\statelist.aspx
+++Default.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\default.aspx.cs
+++bootstrap-grid.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.css
+++bootstrap-grid.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.css.map
+++bootstrap-grid.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.min.css
+++bootstrap-grid.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.min.css.map
+++bootstrap-grid.rtl.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.rtl.css
+++bootstrap-grid.rtl.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.rtl.css.map
+++bootstrap-grid.rtl.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.rtl.min.css
+++bootstrap-grid.rtl.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-grid.rtl.min.css.map
+++bootstrap-reboot.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.css
+++bootstrap-reboot.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.css.map
+++bootstrap-reboot.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.min.css
+++bootstrap-reboot.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.min.css.map
+++bootstrap-reboot.rtl.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.rtl.css
+++bootstrap-reboot.rtl.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.rtl.css.map
+++bootstrap-reboot.rtl.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.rtl.min.css
+++bootstrap-reboot.rtl.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-reboot.rtl.min.css.map
+++bootstrap-utilities.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.css
+++bootstrap-utilities.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.css.map
+++bootstrap-utilities.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.min.css
+++bootstrap-utilities.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.min.css.map
+++bootstrap-utilities.rtl.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.rtl.css
+++bootstrap-utilities.rtl.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.rtl.css.map
+++bootstrap-utilities.rtl.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.rtl.min.css
+++bootstrap-utilities.rtl.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap-utilities.rtl.min.css.map
+++bootstrap.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.css
+++bootstrap.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.css.map
+++bootstrap.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.min.css
+++bootstrap.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.min.css.map
+++bootstrap.rtl.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.rtl.css
+++bootstrap.rtl.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.rtl.css.map
+++bootstrap.rtl.min.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.rtl.min.css
+++bootstrap.rtl.min.css.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\bootstrap.rtl.min.css.map
+++Login.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\login.css
+++RegistrationCss.css
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\css\registrationcss.css
+++bootstrap.bundle.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.bundle.js
+++bootstrap.bundle.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.bundle.js.map
+++bootstrap.bundle.min.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.bundle.min.js
+++bootstrap.bundle.min.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.bundle.min.js.map
+++bootstrap.esm.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.esm.js
+++bootstrap.esm.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.esm.js.map
+++bootstrap.esm.min.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.esm.min.js
+++bootstrap.esm.min.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.esm.min.js.map
+++bootstrap.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.js
+++bootstrap.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.js.map
+++bootstrap.min.js
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.min.js
+++bootstrap.min.js.map
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\js\bootstrap.min.js.map
+++MultiUserAddressBook.master.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\contect\multiuseraddressbook.master.cs
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\
+++Web.Debug.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\web.debug.config
+++csc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\csc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csc.exe
+++csc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\csc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csc.exe.config
+++csc.exe.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csc.exe.refresh
+++csc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\csc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csc.rsp
+++csi.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csi.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\csi.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csi.exe
+++csi.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csi.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csi.exe.config
+++csi.exe.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csi.exe.refresh
+++csi.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\csi.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\csi.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\csi.rsp
+++Microsoft.Build.Tasks.CodeAnalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.build.tasks.codeanalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.build.tasks.codeanalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.build.tasks.codeanalysis.dll
+++Microsoft.CodeAnalysis.CSharp.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.csharp.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.codeanalysis.csharp.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.codeanalysis.csharp.dll
+++Microsoft.CodeAnalysis.CSharp.Scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.csharp.scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.codeanalysis.csharp.scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.codeanalysis.csharp.scripting.dll
+++Microsoft.CodeAnalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.codeanalysis.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.codeanalysis.dll
+++Microsoft.CodeAnalysis.Scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.codeanalysis.scripting.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.codeanalysis.scripting.dll
+++Microsoft.CodeAnalysis.VisualBasic.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.visualbasic.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.codeanalysis.visualbasic.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.codeanalysis.visualbasic.dll
+++Microsoft.CSharp.Core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.csharp.core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.csharp.core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.csharp.core.targets
+++Microsoft.DiaSymReader.Native.amd64.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.diasymreader.native.amd64.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.diasymreader.native.amd64.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.diasymreader.native.amd64.dll
+++Microsoft.DiaSymReader.Native.x86.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.diasymreader.native.x86.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.diasymreader.native.x86.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.diasymreader.native.x86.dll
+++Microsoft.Managed.Core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.managed.core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.managed.core.targets
+++Microsoft.VisualBasic.Core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.visualbasic.core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\microsoft.visualbasic.core.targets
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.visualbasic.core.targets
+++Microsoft.Win32.Primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.win32.primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\microsoft.win32.primitives.dll
+++System.AppContext.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.appcontext.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.appcontext.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.appcontext.dll
+++System.Collections.Immutable.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.collections.immutable.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.collections.immutable.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.collections.immutable.dll
+++System.Console.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.console.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.console.dll
+++System.Diagnostics.DiagnosticSource.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.diagnosticsource.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.diagnostics.diagnosticsource.dll
+++System.Diagnostics.FileVersionInfo.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.fileversioninfo.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.diagnostics.fileversioninfo.dll
+++System.Diagnostics.StackTrace.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.stacktrace.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.diagnostics.stacktrace.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.diagnostics.stacktrace.dll
+++System.Globalization.Calendars.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.globalization.calendars.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.globalization.calendars.dll
+++System.IO.Compression.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.compression.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.io.compression.dll
+++System.IO.Compression.ZipFile.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.compression.zipfile.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.io.compression.zipfile.dll
+++System.IO.FileSystem.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.filesystem.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.io.filesystem.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.io.filesystem.dll
+++System.IO.FileSystem.Primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.filesystem.primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.io.filesystem.primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.io.filesystem.primitives.dll
+++System.Net.Http.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.net.http.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.net.http.dll
+++System.Net.Sockets.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.net.sockets.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.net.sockets.dll
+++System.Reflection.Metadata.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.reflection.metadata.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\system.reflection.metadata.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.reflection.metadata.dll
+++System.Runtime.InteropServices.RuntimeInformation.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.runtime.interopservices.runtimeinformation.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.runtime.interopservices.runtimeinformation.dll
+++System.Security.Cryptography.Algorithms.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.algorithms.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.security.cryptography.algorithms.dll
+++System.Security.Cryptography.Encoding.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.encoding.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.security.cryptography.encoding.dll
+++System.Security.Cryptography.Primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.primitives.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.security.cryptography.primitives.dll
+++System.Security.Cryptography.X509Certificates.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.x509certificates.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.security.cryptography.x509certificates.dll
+++System.Text.Encoding.CodePages.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.text.encoding.codepages.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.text.encoding.codepages.dll
+++System.Threading.Tasks.Extensions.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.threading.tasks.extensions.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.threading.tasks.extensions.dll
+++System.ValueTuple.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.valuetuple.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.valuetuple.dll
+++System.Xml.ReaderWriter.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.readerwriter.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.xml.readerwriter.dll
+++System.Xml.XmlDocument.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xmldocument.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.xml.xmldocument.dll
+++System.Xml.XPath.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xpath.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.xml.xpath.dll
+++System.Xml.XPath.XDocument.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xpath.xdocument.dll
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\system.xml.xpath.xdocument.dll
+++vbc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\vbc.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\vbc.exe
+++vbc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\vbc.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\vbc.exe.config
+++vbc.exe.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbc.exe.refresh
+++vbc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\vbc.rsp
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\vbc.rsp
+++VBCSCompiler.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbcscompiler.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\vbcscompiler.exe
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\vbcscompiler.exe
+++VBCSCompiler.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbcscompiler.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\vbcscompiler.exe.config
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\vbcscompiler.exe.config
+++VBCSCompiler.exe.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\vbcscompiler.exe.refresh
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\microsoft.codedom.providers.dotnetcompilerplatform.dll.refresh
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\microsoft.codedom.providers.dotnetcompilerplatform.xml
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\lib\net45\microsoft.codedom.providers.dotnetcompilerplatform.xml
+++CityAddEdit.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\city\cityaddedit.aspx.cs
+++CityList.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\city\citylist.aspx.cs
+++ContactAddEdit.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contact\contactaddedit.aspx.cs
+++ContactList.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contact\contactlist.aspx.cs
+++ContactCategoryAddEdit.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contactcategory\contactcategoryaddedit.aspx.cs
+++ContactCategoryList.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\contactcategory\contactcategorylist.aspx.cs
+++CountryAddEdit.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\country\countryaddedit.aspx.cs
+++CountryList.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\country\countrylist.aspx.cs
+++LoginPage.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\loginpage\loginpage.aspx.cs
+++New User Registration  Page.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\loginpage\new user registration  page.aspx.cs
+++StateAddEdit.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\state\stateaddedit.aspx.cs
+++StateList.aspx.cs
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\state\statelist.aspx.cs
+++build
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\
+++content
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\
+++lib
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\lib\
+++tools
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\
+++.signature.p7s
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\.signature.p7s
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1.nupkg
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1.nupkg
+++Microsoft.Build.Tasks.CodeAnalysis.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.build.tasks.codeanalysis.dll.refresh
+++Microsoft.CodeAnalysis.CSharp.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.csharp.dll.refresh
+++Microsoft.CodeAnalysis.CSharp.Scripting.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.csharp.scripting.dll.refresh
+++Microsoft.CodeAnalysis.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.dll.refresh
+++Microsoft.CodeAnalysis.Scripting.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.scripting.dll.refresh
+++Microsoft.CodeAnalysis.VisualBasic.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.codeanalysis.visualbasic.dll.refresh
+++Microsoft.DiaSymReader.Native.amd64.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.diasymreader.native.amd64.dll.refresh
+++Microsoft.DiaSymReader.Native.x86.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.diasymreader.native.x86.dll.refresh
+++Microsoft.Win32.Primitives.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\microsoft.win32.primitives.dll.refresh
+++System.AppContext.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.appcontext.dll.refresh
+++System.Collections.Immutable.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.collections.immutable.dll.refresh
+++System.Console.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.console.dll.refresh
+++System.Diagnostics.DiagnosticSource.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.diagnosticsource.dll.refresh
+++System.Diagnostics.FileVersionInfo.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.fileversioninfo.dll.refresh
+++System.Diagnostics.StackTrace.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.diagnostics.stacktrace.dll.refresh
+++System.Globalization.Calendars.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.globalization.calendars.dll.refresh
+++System.IO.Compression.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.compression.dll.refresh
+++System.IO.Compression.ZipFile.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.compression.zipfile.dll.refresh
+++System.IO.FileSystem.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.filesystem.dll.refresh
+++System.IO.FileSystem.Primitives.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.io.filesystem.primitives.dll.refresh
+++System.Net.Http.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.net.http.dll.refresh
+++System.Net.Sockets.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.net.sockets.dll.refresh
+++System.Reflection.Metadata.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.reflection.metadata.dll.refresh
+++System.Runtime.InteropServices.RuntimeInformation.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.runtime.interopservices.runtimeinformation.dll.refresh
+++System.Security.Cryptography.Algorithms.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.algorithms.dll.refresh
+++System.Security.Cryptography.Encoding.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.encoding.dll.refresh
+++System.Security.Cryptography.Primitives.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.primitives.dll.refresh
+++System.Security.Cryptography.X509Certificates.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.security.cryptography.x509certificates.dll.refresh
+++System.Text.Encoding.CodePages.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.text.encoding.codepages.dll.refresh
+++System.Threading.Tasks.Extensions.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.threading.tasks.extensions.dll.refresh
+++System.ValueTuple.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.valuetuple.dll.refresh
+++System.Xml.ReaderWriter.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.readerwriter.dll.refresh
+++System.Xml.XmlDocument.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xmldocument.dll.refresh
+++System.Xml.XPath.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xpath.dll.refresh
+++System.Xml.XPath.XDocument.dll.refresh
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\bin\roslyn\system.xml.xpath.xdocument.dll.refresh
+++net45
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net45\
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net45\
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\lib\net45\
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\net45\
+++net46
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net46\
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net46\
+++Roslyn45
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslyn45\
+++RoslynLatest
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\roslynlatest\
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net45\microsoft.codedom.providers.dotnetcompilerplatform.extensions.props
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net46\microsoft.codedom.providers.dotnetcompilerplatform.extensions.props
+++Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net45\microsoft.codedom.providers.dotnetcompilerplatform.props
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\build\net46\microsoft.codedom.providers.dotnetcompilerplatform.props
+++app.config.install.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net45\app.config.install.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net46\app.config.install.xdt
+++app.config.uninstall.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net45\app.config.uninstall.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net46\app.config.uninstall.xdt
+++web.config.install.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net45\web.config.install.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net46\web.config.install.xdt
+++web.config.uninstall.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net45\web.config.uninstall.xdt
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\content\net46\web.config.uninstall.xdt
+++install.ps1
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\net45\install.ps1
+++uninstall.ps1
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\packages\microsoft.codedom.providers.dotnetcompilerplatform.2.0.1\tools\net45\uninstall.ps1
+++NewFolder1
+++SaveUploadedFie
+++SaveUploadedFile
+i:{adbba96c-af41-46c6-9e35-10bfe257671d}:d:\asp.net program\newwebsite2\multiuseraddressbook\admin panel\saveuploadedfile\
