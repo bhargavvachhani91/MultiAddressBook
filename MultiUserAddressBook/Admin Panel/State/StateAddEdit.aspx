@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <asp:Label runat="server" ID="lblMessage" EnableViewState="false"></asp:Label>
+            <asp:Label runat="server" ID="lblMessage" ForeColor="Red" EnableViewState="false"></asp:Label>
 
         </div>
 
@@ -23,6 +23,7 @@
             <div class="row">
                 <div class="col-md-4">
                     Country
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:DropDownList runat="server" ID="ddlCountryID" CssClass="form-control"></asp:DropDownList>
@@ -31,7 +32,8 @@
             <br />
             <div class="row">
                 <div class="col-md-4">
-                    State Name 
+                    State Name
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox runat="server" ID="txtStateName" CssClass="form-control"></asp:TextBox>
@@ -42,6 +44,7 @@
             <div class="row">
                 <div class="col-md-4">
                     State Code 
+                    
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox runat="server" ID="txtStateCode" CssClass="form-control"></asp:TextBox>

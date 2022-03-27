@@ -29,12 +29,12 @@
                 <asp:GridView ID="gvContactCategory" runat="server" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gvContactCategory_RowCommand" Width="1121px">
 
                     <Columns>
-                        <asp:BoundField DataField="ContactCategoryID" HeaderText="ContactCategoryID" />
+                        <%--<asp:BoundField DataField="ContactCategoryID" HeaderText="ContactCategoryID" />--%>
                         <asp:BoundField DataField="ContactCategoryName" HeaderText="Contact Category Name" />
 
                         <asp:TemplateField HeaderText="Delete ">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord" 
+                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" OnClientClick="return confirm ('Are You Sure You Want To Delete?')" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord" 
                                     CommandArgument='<%#Eval("ContactCategoryID").ToString() %>'>
                                
                                 </asp:LinkButton>

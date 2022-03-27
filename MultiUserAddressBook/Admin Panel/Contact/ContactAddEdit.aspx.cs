@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,6 +23,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             //FillCBLContactCategory ();
             if (Request.QueryString["ContactID"] != null)
             {
+                lblMessage.ForeColor = Color.AliceBlue;
                 lblMessage.Text = "Edit Mode | ContactID " + Request.QueryString["ContactID"].Trim();
                 FillControlls(Convert.ToInt32(Request.QueryString["ContactID"].Trim()));
                 FillDropDownStateList(Convert.ToInt32(ddlCountryID.SelectedValue));
@@ -177,13 +179,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             if (Request.QueryString["ContactID"] != null)
             {
                 #region Update Record
-                //Edit Mode
-                objCmd.CommandText = "PR_Contact_UpdateByPK";
-                objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
-               
-                
-                
-                objCmd.ExecuteNonQuery();
+
                 string FileExtention = Path.GetExtension(fuFile.FileName).ToLower();
                 if (fuFile.HasFile)
                 {
@@ -198,19 +194,50 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                     }
                 }
 
+                //Edit Mode
+                objCmd.CommandText = "PR_Contact_UpdateByPK";
+                objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+               
+                
+                
+                objCmd.ExecuteNonQuery();
+                
+                DeleteContactCategory(Convert.ToInt32(Request.QueryString["ContactID"]));
+                
+
+                foreach (ListItem liContactCategoryID in cblContactCategory.Items)
+                {
+                    if (liContactCategoryID.Selected)
+                    {
+                        SqlCommand objCmdContactCategory = objConn.CreateCommand();
+                        objCmdContactCategory.CommandType = CommandType.StoredProcedure;
+                        objCmdContactCategory.CommandText = "PR_ContactWiseContactCategory_InsertUserID";
+                        if (Session["UserID"] != null)
+                            objCmdContactCategory.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactCategoryID", Convert.ToInt32(liContactCategoryID.Value.ToString()));
+                        objCmdContactCategory.ExecuteNonQuery();
+                    }
+                }
                 Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
                 ddlCountryID.Focus();
                 #endregion Update Record
             }
             else
             {
-                #region Add record
+                #region Add records
                 objCmd.CommandText = "PR_Contact_Insert";
 
 
                 objCmd.Parameters.Add("@ContactID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
 
                 objCmd.ExecuteNonQuery();
+                //SqlCommand objCmdContactCategoryDelete = objConn.CreateCommand();
+                //objCmdContactCategoryDelete.CommandType = CommandType.StoredProcedure;
+                //objCmdContactCategoryDelete.CommandText = "PR_ContactWiseContactCategory_DeleteByContactID";
+                //objCmdContactCategoryDelete.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                //objCmdContactCategoryDelete.Parameters.AddWithValue("@UserID", Session["UserID"]);
+                //objCmdContactCategoryDelete.ExecuteNonQuery();
 
                 SqlInt32 ContactID = 0;
                 ContactId = Convert.ToInt32(objCmd.Parameters["@ContactID"].Value);
@@ -224,11 +251,12 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                         objCmdContactCategory.CommandText = "PR_ContactWiseContactCategory_InsertUserID";
                         if (Session["UserID"] != null)
                             objCmdContactCategory.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
-                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", ContactId);
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", ContactId.ToString().Trim());
                         objCmdContactCategory.Parameters.AddWithValue("@ContactCategoryID", Convert.ToInt32(liContactCategoryID.Value.ToString()));
                         objCmdContactCategory.ExecuteNonQuery();
                     }
                 }
+
                 //AddContactCategory(ContactId);
                 string FileType = Path.GetExtension(fuFile.FileName).ToLower();
 
@@ -248,6 +276,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 #region Insert Record
                 //Add Mode
                 //objCmd.CommandText = "PR_Contact_Insert";
+                lblMessage.ForeColor = Color.Green;
                 lblMessage.Text = "Data Inserted Successfully";
                 ddlCountryID.SelectedIndex = 0;
                 ddlStateID.SelectedIndex = 0;
@@ -288,33 +317,34 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #region Fill Drop Down State
     protected void FillDropDownStateList(SqlInt32 Id)
     {
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        CommonDropDownFillMethods.FillDropeDownListStateByCountryID(ddlStateID, ddlCountryID, Session["UserID"],Id);
+        //SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        if (objConn.State != ConnectionState.Open)
+        //if (objConn.State != ConnectionState.Open)
 
-            objConn.Open();
+        //    objConn.Open();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "[PR_State_SelectByCountry]";
-        if (Session["UserID"] != null)
-            objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
-        if (ddlCountryID.SelectedValue != "-1")
-            objCmd.Parameters.AddWithValue("@CounrtyID", Id);
+        //SqlCommand objCmd = objConn.CreateCommand();
+        //objCmd.CommandType = CommandType.StoredProcedure;
+        //objCmd.CommandText = "[PR_State_SelectByCountry]";
+        //if (Session["UserID"] != null)
+        //    objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+        //if (ddlCountryID.SelectedValue != "-1")
+        //    objCmd.Parameters.AddWithValue("@CounrtyID", Id);
 
-        SqlDataReader objSDR = objCmd.ExecuteReader();
+        //SqlDataReader objSDR = objCmd.ExecuteReader();
 
-        if (objSDR.HasRows == true)
-        {
-            ddlStateID.DataSource = objSDR;
-            ddlStateID.DataValueField = "StateID";
-            ddlStateID.DataTextField = "StateName";
-            ddlStateID.DataBind();
-        }
+        //if (objSDR.HasRows == true)
+        //{
+        //    ddlStateID.DataSource = objSDR;
+        //    ddlStateID.DataValueField = "StateID";
+        //    ddlStateID.DataTextField = "StateName";
+        //    ddlStateID.DataBind();
+        //}
 
-        ddlStateID.Items.Insert(0, new ListItem("- Select State -", "-1"));
-        if (objConn.State == ConnectionState.Open)
-            objConn.Close();
+        //ddlStateID.Items.Insert(0, new ListItem("- Select State -", "-1"));
+        //if (objConn.State == ConnectionState.Open)
+        //    objConn.Close();
 
 
     }
@@ -334,7 +364,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         objCmd.CommandType = CommandType.StoredProcedure;
         objCmd.CommandText = "PR_Country_SelectForDropDownList";
         if (Session["UserID"] != null)
-        objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+        objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
         SqlDataReader objSDR = objCmd.ExecuteReader();
 
         if (objSDR.HasRows == true)
@@ -356,34 +386,35 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #region Fill Drop Down City
     protected void FillDropDownCityList(SqlInt32 Id)
     {
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        CommonDropDownFillMethods.FillDropeDownListCityByStateID(ddlStateID, ddlCityID, Session["UserID"],Id);
+        //SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        if (objConn.State != ConnectionState.Open)
+        //if (objConn.State != ConnectionState.Open)
 
-            objConn.Open();
+        //    objConn.Open();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "PR_City_SelectByState";
-        if (Session["UserID"] != null)
-            objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+        //SqlCommand objCmd = objConn.CreateCommand();
+        //objCmd.CommandType = CommandType.StoredProcedure;
+        //objCmd.CommandText = "PR_City_SelectByState";
+        //if (Session["UserID"] != null)
+        //    objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
 
-        if (ddlStateID.SelectedValue != "-1")
-            objCmd.Parameters.AddWithValue("@StateID", Id);
-        SqlDataReader objSDR = objCmd.ExecuteReader();
+        //if (ddlStateID.SelectedValue != "-1")
+        //    objCmd.Parameters.AddWithValue("@StateID", Id);
+        //SqlDataReader objSDR = objCmd.ExecuteReader();
 
-        if (objSDR.HasRows == true)
-        {
-            ddlCityID.DataSource = objSDR;
-            ddlCityID.DataValueField = "CityID";
-            ddlCityID.DataTextField = "CityName";
-            ddlCityID.DataBind();
-        }
+        //if (objSDR.HasRows == true)
+        //{
+        //    ddlCityID.DataSource = objSDR;
+        //    ddlCityID.DataValueField = "CityID";
+        //    ddlCityID.DataTextField = "CityName";
+        //    ddlCityID.DataBind();
+        //}
 
-        ddlCityID.Items.Insert(0, new ListItem("- Select City -", "-1"));
+        //ddlCityID.Items.Insert(0, new ListItem("- Select City -", "-1"));
 
-        if (objConn.State == ConnectionState.Open)
-            objConn.Close();
+        //if (objConn.State == ConnectionState.Open)
+        //    objConn.Close();
     }
     #endregion Fill Drop Down City
 
@@ -391,39 +422,40 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #region Fill Drop Down Contact Category
     protected void FillDropDownContactCategoryList()
     {
+        CommonDropDownFillMethods.FillCBLContactCategory(cblContactCategory,Session["UserID"]);
+    //    SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        //    if (objConn.State != ConnectionState.Open)
 
-        if (objConn.State != ConnectionState.Open)
+        //        objConn.Open();
 
-            objConn.Open();
+        //    SqlCommand objCmd = objConn.CreateCommand();
+        //    objCmd.CommandType = CommandType.StoredProcedure;
+        //    objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
+        //    if (Session["UserID"] != null)
+        //        objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+        //    SqlDataReader objSDR = objCmd.ExecuteReader();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "PR_ContactCategory_SelectForDropDownList";
-        if (Session["UserID"] != null)
-            objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
-        SqlDataReader objSDR = objCmd.ExecuteReader();
-
-        if (objSDR.HasRows == true)
-        {
-            cblContactCategory.DataSource = objSDR;
-            cblContactCategory.DataValueField = "ContactCategoryID";
-            cblContactCategory.DataTextField = "ContactCategoryName";
-            cblContactCategory.DataBind();
-        }
+        //    if (objSDR.HasRows == true)
+        //    {
+        //        cblContactCategory.DataSource = objSDR;
+        //        cblContactCategory.DataValueField = "ContactCategoryID";
+        //        cblContactCategory.DataTextField = "ContactCategoryName";
+        //        cblContactCategory.DataBind();
+        //    }
 
 
-        //cblContactCategory.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
+        //    //cblContactCategory.Items.Insert(0, new ListItem("- Select Contact Category -", "-1"));
 
-        if (objConn.State == ConnectionState.Open)
-            objConn.Close();
+        //    if (objConn.State == ConnectionState.Open)
+        //        objConn.Close();
+        //}
     }
-    #endregion Fill Drop Down Contact Category
+        #endregion Fill Drop Down Contact Category
 
 
-    #region Button : Cancel
-    protected void btnCancel_Click(object sender, EventArgs e)
+        #region Button : Cancel
+        protected void btnCancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
     }
@@ -672,7 +704,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     private void DeleteContactCategory(SqlInt32 ID)
     {
         #region Set Connection
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultipalUserAddressBookconnectionSring"].ConnectionString);
+        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
         #endregion Set Connection
         try
         {
@@ -682,7 +714,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 objConn.Open();
 
             #region Create Command and Set Parameter
-            SqlCommand objCmd = new SqlCommand("PR_ContactWiseContactCategory_DeleteByContactIDUserID", objConn);
+            SqlCommand objCmd = new SqlCommand("PR_ContactWiseContactCategory_UpdateByUserIdContactId", objConn);
             objCmd.CommandType = CommandType.StoredProcedure;
             objCmd.Parameters.AddWithValue("@ContactId", ID);
             if (Session["UserID"] != null)

@@ -27,7 +27,7 @@
 
                         <asp:TemplateField HeaderText="Delete ">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord"
+                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" OnClientClick="return confirm ('Are You Sure You Want To Delete?')" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord"
                                     CommandArgument='<%#Eval("ContactID").ToString() %>'>
 
                                 </asp:LinkButton>
@@ -49,7 +49,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="ImageDelete">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteImage" CommandArgument='<%#Eval("ContactID").ToString() %>'>
+                                <asp:LinkButton runat="server" ID="lbtnDelete" Text="Delete" OnClientClick="return confirm ('Are You Sure You Want To Delete?')" CssClass="btn btn-danger btn-sm" CommandName="DeleteImage" CommandArgument='<%#Eval("ContactID").ToString() %>'>
 
                                 </asp:LinkButton>
                             </ItemTemplate>

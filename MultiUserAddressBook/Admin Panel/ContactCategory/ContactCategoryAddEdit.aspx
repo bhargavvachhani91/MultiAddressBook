@@ -10,12 +10,13 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <asp:Label runat="server" ID="lblMessege" EnableViewState="false"></asp:Label>
+            <asp:Label runat="server" ID="lblMessege" ForeColor="Red" EnableViewState="false"></asp:Label>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
             Contact Category Name 
+            <span style="color:red">*</span>
             
         </div>
         <div class="col-md-8">

@@ -129,6 +129,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
 
     }
     #endregion Delete Record
+
     #region Delete Image
     private void DeleteContactImage(SqlInt32 Id)
     {

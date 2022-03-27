@@ -12,7 +12,7 @@
         <br />
         <div class="row">
             <div class="col-md-12  d-flex justify-content-center">
-                <asp:Label runat="server" ID="lblMessage" EnableViewContact="False" />
+                <asp:Label runat="server" ID="lblMessage" ForeColor="Red" EnableViewContact="False" />
             </div>
         </div>
         <br />
@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="col-md-4">
                     Country:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:DropDownList ID="ddlCountryID" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCountryID_SelectedIndexChanged"></asp:DropDownList>
@@ -28,6 +29,7 @@
                 <br />
                 <div class="col-md-4">
                     State:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:DropDownList ID="ddlStateID" CssClass="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlStateID_SelectedIndexChanged"></asp:DropDownList>
@@ -36,6 +38,7 @@
 
                 <div class="col-md-4">
                     City:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:DropDownList ID="ddlCityID" CssClass="form-control" runat="server"></asp:DropDownList>
@@ -43,14 +46,16 @@
                 </div>
                 <div class="col-md-4">
                     Contact category:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
-                    <asp:CheckBoxList runat="server" ID="cblContactCategory" />
+                    <asp:CheckBoxList runat="server" ID="cblContactCategory" RepeatDirection="Horizontal" />
                     <%--<asp:DropDownList ID="ddlContactCategoryID" CssClass="form-control" runat="server"></asp:DropDownList>--%>
                     <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Select ContactCategory" ControlToValidate="cblContactCategory" Display="Dynamic" ValidationGroup="Cform" InitialValue="0"></asp:RequiredFieldValidator>----%>
                 </div>
                 <div class="col-md-4">
                     Contact Name:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtContactName" runat="server" CssClass="form-control" />
@@ -87,6 +92,7 @@
 
                 <div class="col-md-4">
                     Email:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
@@ -118,6 +124,7 @@
                 <br />
                 <div class="col-md-4">
                     Address:
+                    <span style="color:red">*</span>
                 </div>
                 <div class="col-md-8">
                     <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" />

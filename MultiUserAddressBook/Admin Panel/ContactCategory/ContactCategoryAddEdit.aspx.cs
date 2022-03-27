@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,12 +19,14 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
         {
             if (Request.QueryString["ContactCategoryID"] != null)
             {
+                lblMessege.ForeColor = Color.AliceBlue;
                 lblMessege.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
 
                 FillControls(Convert.ToInt32(Request.QueryString["ContactCategoryID"]));
             }
             else
             {
+                lblMessege.ForeColor = Color.AliceBlue;
                 lblMessege.Text = "Add Mode";
             }
         }
@@ -90,6 +93,7 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
                 //Add Mode
                 objCmd.CommandText = "[dbo].[PR_ContactCategory_Insert]";
                 objCmd.ExecuteNonQuery();
+                lblMessege.ForeColor = Color.Green;
                 lblMessege.Text = "Data Inserted Successfully";
                 txtContactCategoryName.Text = "";
                 txtContactCategoryName.Focus();

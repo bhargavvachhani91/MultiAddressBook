@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,11 +22,13 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
 
             if (Request.QueryString["CityID"] != null)
             {
+                lblMessege.ForeColor = Color.Green;
                 lblMessege.Text = "Edit Mode | CityID " + Request.QueryString["CityID"].Trim();
                 FillControls(Convert.ToInt32(Request.QueryString["CityID"].Trim()));
             }
             else
             {
+                lblMessege.ForeColor = Color.AliceBlue;
                 lblMessege.Text = "Add Mode";
             }
 
@@ -117,6 +120,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
             txtSTDCode.Text = "";
             ddlStateID.SelectedIndex = 0;
             ddlStateID.Focus();
+            lblMessege.ForeColor = Color.Green;
             lblMessege.Text = "Data Inserted Successfully";
             #endregion Add Mode
         }
@@ -127,48 +131,49 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
     #region FillDropDown
     private void FillDropDownList()
     {
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        CommonDropDownFillMethods.FillDropeDownListState(ddlStateID,Session["UserID"]);
+        //SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        try
-        {
-            if (objConn.State != ConnectionState.Open)
-            {
-                objConn.Open();
-            }
+        //try
+        //{
+        //    if (objConn.State != ConnectionState.Open)
+        //    {
+        //        objConn.Open();
+        //    }
 
-            SqlCommand objCmd = objConn.CreateCommand();
+        //    SqlCommand objCmd = objConn.CreateCommand();
 
-            objCmd.CommandType = CommandType.StoredProcedure;
-            objCmd.CommandText = "PR_State_SelectForDropDownList";
-            if (Session["UserID"] != null)
-                objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
-            SqlDataReader objSDR = objCmd.ExecuteReader();
+        //    objCmd.CommandType = CommandType.StoredProcedure;
+        //    objCmd.CommandText = "PR_State_SelectForDropDownList";
+        //    if (Session["UserID"] != null)
+        //        objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+        //    SqlDataReader objSDR = objCmd.ExecuteReader();
 
-            if (objSDR.HasRows == true)
-            {
-                ddlStateID.DataSource = objSDR;
-                ddlStateID.DataValueField = "StateID";
-                ddlStateID.DataTextField = "StateName";
-                ddlStateID.DataBind();
+        //    if (objSDR.HasRows == true)
+        //    {
+        //        ddlStateID.DataSource = objSDR;
+        //        ddlStateID.DataValueField = "StateID";
+        //        ddlStateID.DataTextField = "StateName";
+        //        ddlStateID.DataBind();
 
-            }
-            ddlStateID.Items.Insert(0, new ListItem("Select State", "-1"));
+        //    }
+        //    ddlStateID.Items.Insert(0, new ListItem("Select State", "-1"));
 
-            if (objConn.State == ConnectionState.Open)
-                objConn.Close();
-        }
-        catch (Exception ex)
-        {
-            lblMessege.Text = ex.Message;
+        //    if (objConn.State == ConnectionState.Open)
+        //        objConn.Close();
+        //}
+        //catch (Exception ex)
+        //{
+        //    lblMessege.Text = ex.Message;
 
-        }
-        finally
-        {
-            if (objConn.State == ConnectionState.Open)
-            {
-                objConn.Close();
-            }
-        }
+        //}
+        //finally
+        //{
+        //    if (objConn.State == ConnectionState.Open)
+        //    {
+        //        objConn.Close();
+        //    }
+        //}
 
     }
     #endregion FillDropDown

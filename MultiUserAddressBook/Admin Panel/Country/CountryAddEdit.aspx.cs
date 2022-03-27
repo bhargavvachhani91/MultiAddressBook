@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,11 +20,13 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 
             if (Request.QueryString["CountryID"] != null)
             {
+                lblMessage.ForeColor = Color.AliceBlue;
                 lblMessage.Text = "Edit Mode | CountryID " + Request.QueryString["CountryID"].Trim();
                 FillControls(Convert.ToInt32(Request.QueryString["CountryID"].Trim()));
             }
             else
             {
+                lblMessage.ForeColor = Color.AliceBlue;
                 lblMessage.Text = "Add Mode";
             }
 
@@ -81,6 +84,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 
             objCmd.ExecuteNonQuery();
             objConn.Close();
+            lblMessage.ForeColor = Color.Green;
             lblMessage.Text = "Data Inserted Succesfully";
             txtCountryName.Text = "";
             txtCountryCode.Text = "";

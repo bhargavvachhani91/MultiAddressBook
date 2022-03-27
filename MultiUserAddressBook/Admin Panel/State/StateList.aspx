@@ -28,14 +28,14 @@
                 <br />
                 <asp:GridView ID="gvState" runat="server" CssClass="table table-hover" AutoGenerateColumns="false" OnRowCommand="gvState_RowCommand" Width="1121px">
                     <Columns>
-                        <asp:BoundField DataField="StateID" HeaderText="StateID" />
-                        <asp:BoundField DataField="CountryID" HeaderText="CountryID" />
+                        <%--<asp:BoundField DataField="StateID" HeaderText="StateID" />
+                        <asp:BoundField DataField="CountryID" HeaderText="CountryID" />--%>
                         <asp:BoundField DataField="CountryName" HeaderText="Country" />
                         <asp:BoundField DataField="StateName" HeaderText="State" />
                         <asp:BoundField DataField="StateCode" HeaderText="Code" />
                         <asp:TemplateField HeaderText="Delete ">
                             <ItemTemplate>
-                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord"
+                                <asp:LinkButton runat="server" ID="btnDelete" Text="Delete" OnClientClick="return confirm ('Are You Sure You Want To Delete?')" CssClass="btn btn-danger btn-sm" CommandName="DeleteRecord"
                                     CommandArgument='<%#Eval("StateID").ToString() %>'>
                                
                                 </asp:LinkButton>

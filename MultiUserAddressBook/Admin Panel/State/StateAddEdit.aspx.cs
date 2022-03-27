@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,11 +21,13 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
 
             if (Request.QueryString["StateID"] != null)
             {
+                lblMessage.ForeColor = Color.AliceBlue;
                 lblMessage.Text = "Edit Mode | StateID " + Request.QueryString["StateID"].Trim();
                 FillControls(Convert.ToInt32(Request.QueryString["StateID"].Trim()));
             }
             else
             {
+                lblMessage.ForeColor = Color.AliceBlue;
                 lblMessage.Text = "Add Mode";
             }
 
@@ -135,6 +138,7 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
                 txtStateCode.Text = "";
                 ddlCountryID.SelectedIndex = 0;
                 ddlCountryID.Focus();
+                lblMessage.ForeColor = Color.Green;
                 lblMessage.Text = "Data Inserted Successfully";
                 #endregion Add Mode
             }
@@ -164,48 +168,50 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
     #region FillDropDownList
     private void FillDropDownList()
     {
-        #region Local variable
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
-        #endregion Local Variable
-        try
-        {
-            #region Connection Open & Command Object
-            if (objConn.State != ConnectionState.Open)
-            {
-                objConn.Open();
-            }
+        CommonDropDownFillMethods.FillDropeDownListCountry(ddlCountryID, Session["UserID"]);
+        
+        //#region Local variable
+        //SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        //#endregion Local Variable
+        //try
+        //{
+        //    #region Connection Open & Command Object
+        //    if (objConn.State != ConnectionState.Open)
+        //    {
+        //        objConn.Open();
+        //    }
 
-            SqlCommand objCmd = objConn.CreateCommand();
+        //    SqlCommand objCmd = objConn.CreateCommand();
 
-            objCmd.CommandType = CommandType.StoredProcedure;
-            objCmd.CommandText = "PR_Country_SelectForDropDownList";
-            if (Session["UserID"] != null)
-                objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
-            SqlDataReader objSDR = objCmd.ExecuteReader();
+        //    objCmd.CommandType = CommandType.StoredProcedure;
+        //    objCmd.CommandText = "PR_Country_SelectForDropDownList";
+        //    if (Session["UserID"] != null)
+        //        objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+        //    SqlDataReader objSDR = objCmd.ExecuteReader();
 
 
-            if (objSDR.HasRows == true)
-            {
-                ddlCountryID.DataSource = objSDR;
-                ddlCountryID.DataValueField = "CountryID";
-                ddlCountryID.DataTextField = "CountryName";
-                ddlCountryID.DataBind();
+        //    if (objSDR.HasRows == true)
+        //    {
+        //        ddlCountryID.DataSource = objSDR;
+        //        ddlCountryID.DataValueField = "CountryID";
+        //        ddlCountryID.DataTextField = "CountryName";
+        //        ddlCountryID.DataBind();
 
-            }
-            ddlCountryID.Items.Insert(0, new ListItem("Select Country", "-1"));
+        //    }
+        //    ddlCountryID.Items.Insert(0, new ListItem("Select Country", "-1"));
 
-            if (objConn.State == ConnectionState.Open)
-                objConn.Close();
+        //    if (objConn.State == ConnectionState.Open)
+        //        objConn.Close();
 
-            #endregion Connection Open & Command Object
-        }
-        catch (Exception ex)
-        {
-            lblMessage.Text = ex.Message;
+        //    #endregion Connection Open & Command Object
+        //}
+        //catch (Exception ex)
+        //{
+        //    lblMessage.Text = ex.Message;
 
-        }
-        finally { objConn.Close(); }
-
+        //}
+        //finally { objConn.Close(); }
+   
 
     }
     #endregion FillDropDownList
