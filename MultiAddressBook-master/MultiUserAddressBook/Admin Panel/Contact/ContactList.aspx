@@ -19,7 +19,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-10">
-                <asp:HyperLink runat="server" ID="hlAddState" Text="Add new Contact" CssClass="btn btn-warning" NavigateUrl="~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx"></asp:HyperLink>
+                <asp:HyperLink runat="server" ID="hlAddState" Text="Add new Contact" CssClass="btn btn-warning" NavigateUrl="~/AdminPanel/ContactAdd"></asp:HyperLink>
             </div>
             <div>
                 <asp:GridView ID="gvContact" runat="server" CssClass="table table-hover" OnRowCommand="gvContact_RowCommand" Height="192px" Width="1121px" AutoGenerateColumns="False">
@@ -37,7 +37,7 @@
 
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx?ContactID="+Eval("ContactID").ToString().Trim() %>'>
+                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/AdminPanel/ContactEdit?ContactID="+Eval("ContactID").ToString().Trim() %>'>
                                 
                                 </asp:HyperLink>
                             </ItemTemplate>

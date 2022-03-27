@@ -125,7 +125,7 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
                 objCmd.Parameters.AddWithValue("@StateID", Request.QueryString["StateID"].ToString().Trim());
                 objCmd.CommandText = "[PR_State_UpdateByPK]";
                 objCmd.ExecuteNonQuery();
-                Response.Redirect("~/MultiUserAddressBook/AdminbPanel/State/StateList.aspx", true);
+                Response.Redirect("~/AdminPanel/StateList", true);
                 #endregion Edit Mode
             }
             else
@@ -161,7 +161,7 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
     #region Button : Cancel
     protected void btncancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/MultiUserAddressBook/Admin Panel/State/StateList.aspx", true);
+        Response.Redirect("~/AdminPanel/StateList", true);
     }
     #endregion Button : Cancel
 

@@ -84,7 +84,7 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
                 objCmd.Parameters.AddWithValue("@ContactCategoryID", Request.QueryString["ContactCategoryID"].ToString().Trim());
                 objCmd.CommandText = "[dbo].[PR_ContactCategory_UpdateByPK]";
                 objCmd.ExecuteNonQuery();
-                Response.Redirect("~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryList.aspx", true);
+                Response.Redirect("~/AdminPanel/ContactCategoryEdit", true);
                 #endregion Update Record
             }
             else
@@ -167,7 +167,7 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
     #region Cancel Button
     protected void btnCancel_Click1(object sender, EventArgs e)
     {
-        Response.Redirect("~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryList.aspx", true);
+        Response.Redirect("~/AdminPanel/ContactCategoryEdit", true);
     }
     #endregion Cancel Button
 }

@@ -15,6 +15,10 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #region Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
+        //if (Page.RouteData.Values["OperationName"])
+        //{
+
+        //}
         if (!Page.IsPostBack)
         {
             //FillDropDownContactCategoryList(); 
@@ -31,6 +35,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             }
 
         }
+
     }
     #endregion Page Load
 
@@ -219,7 +224,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                         objCmdContactCategory.ExecuteNonQuery();
                     }
                 }
-                Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
+                Response.Redirect("~/AdminPanel/ContactList", true);
                 ddlCountryID.Focus();
                 #endregion Update Record
             }
@@ -457,7 +462,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         #region Button : Cancel
         protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx", true);
+        Response.Redirect("~/AdminPanel/ContactList", true);
     }
     #endregion Button : Cancel
 

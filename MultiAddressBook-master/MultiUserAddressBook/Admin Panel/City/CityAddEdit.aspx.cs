@@ -106,7 +106,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
             objCmd.Parameters.AddWithValue("@CityID", Request.QueryString["CityID"].ToString().Trim());
             objCmd.CommandText = "[PR_City_UpdateByPK]";
             objCmd.ExecuteNonQuery();
-            Response.Redirect("~/MultiUserAddressBook/Admin Panel/City/CityList.aspx", true);
+            Response.Redirect("~/AdminPanel/CityList", true);
             #endregion Edit Mode
         }
         else
@@ -182,7 +182,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
     #region Button : Cancel
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/MultiUserAddressBook/Admin Panel/City/CityList.aspx", true);
+        Response.Redirect("~/AdminPanel/CityList", true);
     }
     #endregion Button : Cancel
 
