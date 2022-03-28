@@ -19,14 +19,14 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
         {
             if (RouteData.Values["ContactCategoryID"] != null)
             {
-                lblMessege.ForeColor = Color.AliceBlue;
-                lblMessege.Text = "Edit Mode | ContactCategoryID = " + RouteData.Values["ContactCategoryID"].ToString();
+                lblMessege.ForeColor = Color.Blue;
+                lblMessege.Text = "Edit Mode | ContactCategoryID = " + EncryptionDecryption.Decode(RouteData.Values["ContactCategoryID"].ToString().Trim());
 
                 FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactCategoryID"].ToString().Trim())));
             }
             else
             {
-                lblMessege.ForeColor = Color.AliceBlue;
+                lblMessege.ForeColor = Color.Blue;
                 lblMessege.Text = "Add Mode";
             }
         }

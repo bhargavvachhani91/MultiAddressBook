@@ -112,8 +112,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactList : Syst
 
             objcmd.ExecuteNonQuery();
 
+            lblMessage.Text = "Deleted!";
             objConn.Close();
-
             FillGridView();
         }
         catch (Exception ex)

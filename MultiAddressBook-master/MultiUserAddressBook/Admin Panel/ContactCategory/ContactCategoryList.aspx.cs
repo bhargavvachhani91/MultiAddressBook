@@ -98,6 +98,7 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
 
             objcmd.ExecuteNonQuery();
 
+            lblMessage.Text = "Deleted!";
             objConn.Close();
 
             FillGridView();

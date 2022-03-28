@@ -21,13 +21,13 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
             
             if (RouteData.Values["StateID"] != null)
             {
-                lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | StateID " + RouteData.Values["StateID"];
+                lblMessage.ForeColor = Color.Blue;
+                lblMessage.Text = "Edit Mode | StateID " + EncryptionDecryption.Decode(RouteData.Values["StateID"].ToString().Trim());
                 FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["StateID"].ToString().Trim())));
             }
             else
             {
-                lblMessage.ForeColor = Color.AliceBlue;
+                lblMessage.ForeColor = Color.Blue;
                 lblMessage.Text = "Add Mode";
             }
 

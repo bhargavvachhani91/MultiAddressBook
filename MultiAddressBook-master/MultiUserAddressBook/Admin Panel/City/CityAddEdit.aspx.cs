@@ -23,12 +23,12 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
             if (RouteData.Values["CityID"] != null)
             {
                 lblMessege.ForeColor = Color.Green;
-                lblMessege.Text = "Edit Mode | CityID " + RouteData.Values["CityID"];
+                lblMessege.Text = "Edit Mode | CityID " + EncryptionDecryption.Decode(RouteData.Values["CityID"].ToString().Trim());
                 FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["CityID"].ToString().Trim())));
             }
             else
             {
-                lblMessege.ForeColor = Color.AliceBlue;
+                lblMessege.ForeColor = Color.Blue;
                 lblMessege.Text = "Add Mode";
             }
 
@@ -103,7 +103,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
 
             #region Edit Mode
             //Edit Mode
-            objCmd.Parameters.AddWithValue("@CityID", RouteData.Values["CityID"].ToString().Trim());
+            objCmd.Parameters.AddWithValue("@CityID", (EncryptionDecryption.Decode(RouteData.Values["CityID"].ToString().Trim())));
             objCmd.CommandText = "[PR_City_UpdateByPK]";
             objCmd.ExecuteNonQuery();
             Response.Redirect("~/AdminPanel/City/List", true);

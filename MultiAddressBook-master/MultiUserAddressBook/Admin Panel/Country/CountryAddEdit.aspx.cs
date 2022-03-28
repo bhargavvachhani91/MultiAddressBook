@@ -22,13 +22,13 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 
             if (RouteData.Values ["CountryID"] != null)
             {
-                lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | CountryID " + RouteData.Values ["CountryID"];
+                lblMessage.ForeColor = Color.Blue;
+                lblMessage.Text = "Edit Mode | CountryID " + EncryptionDecryption.Decode(RouteData.Values["CountryID"].ToString().Trim());
                 FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["CountryID"].ToString().Trim())));
             }
             else
             {
-                lblMessage.ForeColor = Color.AliceBlue;
+                lblMessage.ForeColor = Color.Blue;
                 lblMessage.Text = "Add Mode";
             }
 
@@ -62,37 +62,53 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
             lblMessage.Text = strErrorMessage;
             return;
         }
-
+        if(txtCountryName.Text != null)
+        {
+            strCountryName = txtCountryName.Text.Trim();
+        }
+        if (txtCountryCode.Text != null)
+        {
+            strCountryCode = txtCountryName.Text.Trim();
+        }
         SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString);
         try
         {
             objConn.Open();
             SqlCommand objCmd = objConn.CreateCommand();
             objCmd.CommandType = CommandType.StoredProcedure;
-            objCmd.CommandText = "PR_Counrty_Insert";
 
-            if (txtCountryName.Text.Trim() != "")
-            {
-                strCountryName = txtCountryName.Text.Trim();
-            }
-            if (txtCountryCode.Text.Trim() != "")
-            {
-                strCountryCode = txtCountryCode.Text.Trim();
-            }
-            if (Session["UserID"] != null)
-                objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
+
+            //Pass the parameter in the SP
             objCmd.Parameters.AddWithValue("@CountryName", strCountryName);
             objCmd.Parameters.AddWithValue("@CountryCode", strCountryCode);
 
-            objCmd.ExecuteNonQuery();
-            objConn.Close();
-            lblMessage.ForeColor = Color.Green;
-            lblMessage.Text = "Data Inserted Succesfully";
-            txtCountryName.Text = "";
-            txtCountryCode.Text = "";
-            txtCountryName.Focus();
-            if (objConn.State == ConnectionState.Open)
-                objConn.Close();
+            if (Session["UserID"] != null)
+                objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
+            if (Request.QueryString["CountryID"] != null)
+            {
+                #region Edit Mode
+                objCmd.Parameters.AddWithValue("@CountryId", Request.QueryString["CountryID"].ToString().Trim());
+                objCmd.CommandText = "[PR_Country_UpdateByPK]";
+                objCmd.ExecuteNonQuery();
+
+
+                Response.Redirect("~/AdminPanel/Country/List", true);
+                #endregion Edit Mode
+            }
+            else
+            {
+                #region Add Mode
+
+                objCmd.CommandText = "[PR_Counrty_Insert]";
+                objCmd.ExecuteNonQuery();
+
+
+                lblMessage.ForeColor = System.Drawing.Color.Green;
+                lblMessage.Text = txtCountryName.Text.Trim() + " : " + txtCountryCode.Text.Trim() + " - " + "Insert Successfully";
+                txtCountryName.Text = txtCountryCode.Text = "";
+                txtCountryName.Focus();
+                #endregion Add Mode
+            }
         }
         catch (Exception ex)
         {

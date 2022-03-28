@@ -82,7 +82,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryList : Syst
             objcmd.Parameters.AddWithValue("@CountryID", CountryID.ToString().Trim());
 
                 objcmd.ExecuteNonQuery();
-
+            lblMessage.Text = "deleted!";
                 objConn.Close();
 
                 FillGridView();

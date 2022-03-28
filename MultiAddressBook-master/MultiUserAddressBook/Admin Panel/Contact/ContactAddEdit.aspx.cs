@@ -27,8 +27,8 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             //FillCBLContactCategory ();
             if (RouteData.Values["ContactID"] != null)
             {
-                lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | ContactID " + RouteData.Values["ContactID"];
+                lblMessage.ForeColor = Color.Blue;
+                lblMessage.Text = "Edit Mode | ContactID " + EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim());
                 FillControlls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                 FillDropDownStateList(Convert.ToInt32(ddlCountryID.SelectedValue));
                 FillDropDownCityList(Convert.ToInt32(ddlStateID.SelectedValue));
@@ -190,7 +190,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 {
                     if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
                     {
-                        UploadImage(Convert.ToInt32(RouteData.Values["ContactID"]), FileExtention);
+                        UploadImage(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())), FileExtention);
                     }
                     else
                     {
@@ -201,13 +201,13 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
                 //Edit Mode
                 objCmd.CommandText = "PR_Contact_UpdateByPK";
-                objCmd.Parameters.AddWithValue("@ContactID", (EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
+                objCmd.Parameters.AddWithValue("@ContactID", Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                
                 
                 
                 objCmd.ExecuteNonQuery();
                 
-                DeleteContactCategory(Convert.ToInt32(RouteData.Values["ContactID"]));
+                DeleteContactCategory(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                 
 
                 foreach (ListItem liContactCategoryID in cblContactCategory.Items)
@@ -219,12 +219,12 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                         objCmdContactCategory.CommandText = "PR_ContactWiseContactCategory_InsertUserID";
                         if (Session["UserID"] != null)
                             objCmdContactCategory.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
-                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", RouteData.Values["ContactID"].ToString().Trim());
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                         objCmdContactCategory.Parameters.AddWithValue("@ContactCategoryID", Convert.ToInt32(liContactCategoryID.Value.ToString()));
                         objCmdContactCategory.ExecuteNonQuery();
                     }
                 }
-                Response.Redirect("~/AdminPanel/ContactList", true);
+                Response.Redirect("~/AdminPanel/Contact/List", true);
                 ddlCountryID.Focus();
                 #endregion Update Record
             }
@@ -359,31 +359,33 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
     #region Fill Drop Down Country
     protected void FillDropDownCountryList()
     {
-        SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
+        CommonDropDownFillMethods.FillDropeDownListCountry(ddlCountryID ,Session["UserID"]);
+       // SqlConnection objConn = new SqlConnection(ConfigurationManager.ConnectionStrings["MultiUserAddressBookConnectionString"].ConnectionString.Trim());
 
-        if (objConn.State != ConnectionState.Open)
+        // if (objConn.State != ConnectionState.Open)
 
-            objConn.Open();
+        //     objConn.Open();
 
-        SqlCommand objCmd = objConn.CreateCommand();
-        objCmd.CommandType = CommandType.StoredProcedure;
-        objCmd.CommandText = "PR_Country_SelectForDropDownList";
-        if (Session["UserID"] != null)
-        objCmd.Parameters.AddWithValue("@UserID", Session["UserID"]);
-        SqlDataReader objSDR = objCmd.ExecuteReader();
+        // SqlCommand objCmd = objConn.CreateCommand();
+        //if (Session["UserID"] != null)
+        //                 objCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
 
-        if (objSDR.HasRows == true)
-        {
-            ddlCountryID.DataSource = objSDR;
-            ddlCountryID.DataValueField = "CountryID";
-            ddlCountryID.DataTextField = "CountryName";
-            ddlCountryID.DataBind();
-        }
+        // objCmd.CommandType = CommandType.StoredProcedure;
+        // objCmd.CommandText = "PR_Country_SelectForDropDownList";
+        // SqlDataReader objSDR = objCmd.ExecuteReader();
 
-        ddlCountryID.Items.Insert(0, new ListItem("- Select Country -", "-1"));
+        // if (objSDR.HasRows == true)
+        // {
+        //     ddlCountryID.DataSource = objSDR;
+        //     ddlCountryID.DataValueField = "CountryID";
+        //     ddlCountryID.DataTextField = "CountryName";
+        //     ddlCountryID.DataBind();
+        // }
 
-        if (objConn.State == ConnectionState.Open)
-            objConn.Close();
+        // ddlCountryID.Items.Insert(0, new ListItem("- Select Country -", "-1"));
+
+        // if (objConn.State == ConnectionState.Open)
+        //     objConn.Close();
     }
     #endregion Fill Drop Down Country
 
@@ -462,7 +464,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
         #region Button : Cancel
         protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/AdminPanel/ContactList", true);
+        Response.Redirect("~/AdminPanel/Contact/List", true);
     }
     #endregion Button : Cancel
 

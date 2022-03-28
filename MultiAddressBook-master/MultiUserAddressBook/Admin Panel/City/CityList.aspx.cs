@@ -89,7 +89,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityList : System.Web
             objcmd.Parameters.AddWithValue("@CityID", CityID.ToString().Trim());
 
             objcmd.ExecuteNonQuery();
-
+            lblMessage.Text = "Deleted!";
             objConn.Close();
 
             FillGridView();
