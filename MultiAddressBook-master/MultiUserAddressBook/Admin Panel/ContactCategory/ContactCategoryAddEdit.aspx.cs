@@ -17,12 +17,12 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
     {
         if (!Page.IsPostBack)
         {
-            if (Request.QueryString["ContactCategoryID"] != null)
+            if (RouteData.Values["ContactCategoryID"] != null)
             {
                 lblMessege.ForeColor = Color.AliceBlue;
-                lblMessege.Text = "Edit Mode | ContactCategoryID = " + Request.QueryString["ContactCategoryID"].ToString();
+                lblMessege.Text = "Edit Mode | ContactCategoryID = " + RouteData.Values["ContactCategoryID"].ToString();
 
-                FillControls(Convert.ToInt32(Request.QueryString["ContactCategoryID"]));
+                FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactCategoryID"].ToString().Trim())));
             }
             else
             {
@@ -77,14 +77,14 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
                 objCmd.Parameters.AddWithValue("UserID", Session["UserID"]);
             #endregion Set Connection & Command Object
 
-            if (Request.QueryString["ContactCategoryID"] != null)
+            if (RouteData.Values["ContactCategoryID"] != null)
             {
                 #region Update Record
                 //Edit Mode
-                objCmd.Parameters.AddWithValue("@ContactCategoryID", Request.QueryString["ContactCategoryID"].ToString().Trim());
+                objCmd.Parameters.AddWithValue("@ContactCategoryID", (EncryptionDecryption.Decode(RouteData.Values["ContactCategoryID"].ToString().Trim())));
                 objCmd.CommandText = "[dbo].[PR_ContactCategory_UpdateByPK]";
                 objCmd.ExecuteNonQuery();
-                Response.Redirect("~/AdminPanel/ContactCategoryEdit", true);
+                Response.Redirect("~/AdminPanel/ContactCategory/List", true);
                 #endregion Update Record
             }
             else
@@ -167,7 +167,7 @@ public partial class MultiUserAddressBook_Admin_Panel_ContactCategory_ContactCat
     #region Cancel Button
     protected void btnCancel_Click1(object sender, EventArgs e)
     {
-        Response.Redirect("~/AdminPanel/ContactCategoryEdit", true);
+        Response.Redirect("~/AdminPanel/ContactCategory/List", true);
     }
     #endregion Cancel Button
 }

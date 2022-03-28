@@ -18,12 +18,12 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
         if (!IsPostBack)
         {
             FillDropDownList();
-
-            if (Request.QueryString["StateID"] != null)
+            
+            if (RouteData.Values["StateID"] != null)
             {
                 lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | StateID " + Request.QueryString["StateID"].Trim();
-                FillControls(Convert.ToInt32(Request.QueryString["StateID"].Trim()));
+                lblMessage.Text = "Edit Mode | StateID " + RouteData.Values["StateID"];
+                FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["StateID"].ToString().Trim())));
             }
             else
             {
@@ -117,15 +117,15 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
             #endregion Connection Open & Command Object
 
 
-            if (Request.QueryString["StateID"] != null)
+            if (RouteData.Values["StateID"] != null)
             {
 
                 #region Edit Mode
                 //Edit Mode
-                objCmd.Parameters.AddWithValue("@StateID", Request.QueryString["StateID"].ToString().Trim());
+                objCmd.Parameters.AddWithValue("@StateID", EncryptionDecryption.Decode(RouteData.Values["StateID"].ToString().Trim()));
                 objCmd.CommandText = "[PR_State_UpdateByPK]";
                 objCmd.ExecuteNonQuery();
-                Response.Redirect("~/AdminPanel/StateList", true);
+                Response.Redirect("~/AdminPanel/State/List", true);
                 #endregion Edit Mode
             }
             else
@@ -161,7 +161,7 @@ public partial class MultiUserAddressBook_Admin_Panel_State_SateAddEdit : System
     #region Button : Cancel
     protected void btncancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/AdminPanel/StateList", true);
+        Response.Redirect("~/AdminPanel/State/List", true);
     }
     #endregion Button : Cancel
 

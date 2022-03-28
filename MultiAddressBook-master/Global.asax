@@ -38,25 +38,25 @@
     {
         routes.Ignore("{resource}..axd/{*pathINFO}");
 
-        routes.MapPageRoute("AdminPanelCountryList", "AdminPanel/CountryList", "~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx");
-        routes.MapPageRoute("AdminPanelCountryAdd", "AdminPanel/Country/{operationName}", "~/MultiUserAddressBook/Admin Panel/Country/CountryAddEdit.aspx");
-        routes.MapPageRoute("AdminPanelCountrEdit", "AdminPanel/CountryEdit", "~/MultiUserAddressBook/Admin Panel/Country/CountryAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelCountryList", "AdminPanel/Country/List", "~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx");
+        routes.MapPageRoute("AdminPanelCountryAdd", "AdminPanel/Country/Add", "~/MultiUserAddressBook/Admin Panel/Country/CountryAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelCountrEdit", "AdminPanel/Country/Edit/{CountryID}", "~/MultiUserAddressBook/Admin Panel/Country/CountryAddEdit.aspx");
 
-          routes.MapPageRoute("AdminPanelStateList", "AdminPanel/StateList", "~/MultiUserAddressBook/Admin Panel/State/StateList.aspx");
-        routes.MapPageRoute("AdminPanelStateAdd", "AdminPanel/StateAdd", "~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx");
-        routes.MapPageRoute("AdminPanelStateEdit", "AdminPanel/StateEdit", "~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx");
+          routes.MapPageRoute("AdminPanelStateList", "AdminPanel/State/List", "~/MultiUserAddressBook/Admin Panel/State/StateList.aspx");
+        routes.MapPageRoute("AdminPanelStateAdd", "AdminPanel/State/Add", "~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelStateEdit", "AdminPanel/State/Edit/{StateID}", "~/MultiUserAddressBook/Admin Panel/State/StateAddEdit.aspx");
 
-          routes.MapPageRoute("AdminPanelCityList", "AdminPanel/CityList", "~/MultiUserAddressBook/Admin Panel/City/CityList.aspx");
-        routes.MapPageRoute("AdminPanelCityAdd", "AdminPanel/CityAdd", "~/MultiUserAddressBook/Admin Panel/City/CityAddEdit.aspx");
-        routes.MapPageRoute("AdminPanelCityEdit", "AdminPanel/CityEdit", "~/MultiUserAddressBook/Admin Panel/City/CityAddEdit.aspx");
+          routes.MapPageRoute("AdminPanelCityList", "AdminPanel/City/List", "~/MultiUserAddressBook/Admin Panel/City/CityList.aspx");
+        routes.MapPageRoute("AdminPanelCityAdd", "AdminPanel/City/Add", "~/MultiUserAddressBook/Admin Panel/City/CityAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelCityEdit", "AdminPanel/City/Edit/{CityID}", "~/MultiUserAddressBook/Admin Panel/City/CityAddEdit.aspx");
 
-          routes.MapPageRoute("AdminPanelContactCategoryList", "AdminPanel/ContactCategoryList", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryList.aspx");
-        routes.MapPageRoute("AdminPanelContactCategoryAdd", "AdminPanel/ContactCategoryAdd", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryAddEdit.aspx");
-        routes.MapPageRoute("AdminPanelContactCategoryEdit", "AdminPanel/ContactCategoryEdit", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryAddEdit.aspx");
+          routes.MapPageRoute("AdminPanelContactCategoryList", "AdminPanel/ContactCategory/List", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryList.aspx");
+        routes.MapPageRoute("AdminPanelContactCategoryAdd", "AdminPanel/ContactCategory/Add", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelContactCategoryEdit", "AdminPanel/ContactCategory/Edit/{ContactCategoryID}", "~/MultiUserAddressBook/Admin Panel/ContactCategory/ContactCategoryAddEdit.aspx");
 
-          routes.MapPageRoute("AdminPanelContactList", "AdminPanel/ContactList", "~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx");
-        routes.MapPageRoute("AdminPanelContactAdd", "AdminPanel/ContactAdd", "~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx");
-        routes.MapPageRoute("AdminPanelContactEdit", "AdminPanel/ContactEdit", "~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx");
+          routes.MapPageRoute("AdminPanelContactList", "AdminPanel/Contact/List", "~/MultiUserAddressBook/Admin Panel/Contact/ContactList.aspx");
+        routes.MapPageRoute("AdminPanelContactAdd", "AdminPanel/Contact/Add", "~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx");
+        routes.MapPageRoute("AdminPanelContactEdit", "AdminPanel/Contact/Edit/{ContactID}", "~/MultiUserAddressBook/Admin Panel/Contact/ContactAddEdit.aspx");
     }
 
 </script>

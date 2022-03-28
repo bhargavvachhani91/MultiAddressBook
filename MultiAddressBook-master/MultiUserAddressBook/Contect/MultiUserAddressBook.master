@@ -27,23 +27,23 @@
                             <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                                     <li class="nav-item">
-                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCountry" Text="Country" NavigateUrl="~/AdminPanel/CountryList">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCountry" Text="Country" NavigateUrl="~/AdminPanel/Country/List">
                                         </asp:HyperLink>
                                     </li>
                                     <li class="nav-item">
-                                        <asp:HyperLink runat="server" class="nav-link" ID="hlState" Text="State" NavigateUrl="~/AdminPanel/StateEdit">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlState" Text="State" NavigateUrl="~/AdminPanel/State/List">
                                         </asp:HyperLink>
                                     </li>
                                     <li class="nav-item">
-                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCity" Text="City" NavigateUrl="~/AdminPanel/CityList">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlCity" Text="City" NavigateUrl="~/AdminPanel/City/List">
                                         </asp:HyperLink>
                                     </li>
                                     <li class="nav-item">
-                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContactCategory" Text="ContactCategory" NavigateUrl="~/AdminPanel/ContactCategoryList">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContactCategory" Text="ContactCategory" NavigateUrl="~/AdminPanel/ContactCategory/List">
                                         </asp:HyperLink>
                                     </li>
                                     <li class="nav-item">
-                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContact" Text="Contact" NavigateUrl="~/AdminPanel/ContactList">
+                                        <asp:HyperLink runat="server" class="nav-link" ID="hlContact" Text="Contact" NavigateUrl="~/AdminPanel/Contact/List">
                                         </asp:HyperLink>
                                     </li>
 

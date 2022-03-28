@@ -25,11 +25,11 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
             FillDropDownCountryList();
             FillDropDownContactCategoryList();
             //FillCBLContactCategory ();
-            if (Request.QueryString["ContactID"] != null)
+            if (RouteData.Values["ContactID"] != null)
             {
                 lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | ContactID " + Request.QueryString["ContactID"].Trim();
-                FillControlls(Convert.ToInt32(Request.QueryString["ContactID"].Trim()));
+                lblMessage.Text = "Edit Mode | ContactID " + RouteData.Values["ContactID"];
+                FillControlls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                 FillDropDownStateList(Convert.ToInt32(ddlCountryID.SelectedValue));
                 FillDropDownCityList(Convert.ToInt32(ddlStateID.SelectedValue));
             }
@@ -181,7 +181,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
             #endregion Set Connection & Command Object
 
-            if (Request.QueryString["ContactID"] != null)
+            if (RouteData.Values["ContactID"] != null)
             {
                 #region Update Record
 
@@ -190,7 +190,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 {
                     if (FileExtention == ".jpge" || FileExtention == ".jpg" || FileExtention == ".png" || FileExtention == ".gif")
                     {
-                        UploadImage(Convert.ToInt32(Request.QueryString["ContactID"]), FileExtention);
+                        UploadImage(Convert.ToInt32(RouteData.Values["ContactID"]), FileExtention);
                     }
                     else
                     {
@@ -201,13 +201,13 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
 
                 //Edit Mode
                 objCmd.CommandText = "PR_Contact_UpdateByPK";
-                objCmd.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                objCmd.Parameters.AddWithValue("@ContactID", (EncryptionDecryption.Decode(RouteData.Values["ContactID"].ToString().Trim())));
                
                 
                 
                 objCmd.ExecuteNonQuery();
                 
-                DeleteContactCategory(Convert.ToInt32(Request.QueryString["ContactID"]));
+                DeleteContactCategory(Convert.ToInt32(RouteData.Values["ContactID"]));
                 
 
                 foreach (ListItem liContactCategoryID in cblContactCategory.Items)
@@ -219,7 +219,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                         objCmdContactCategory.CommandText = "PR_ContactWiseContactCategory_InsertUserID";
                         if (Session["UserID"] != null)
                             objCmdContactCategory.Parameters.AddWithValue("@UserID", Convert.ToInt32(Session["UserID"]));
-                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                        objCmdContactCategory.Parameters.AddWithValue("@ContactID", RouteData.Values["ContactID"].ToString().Trim());
                         objCmdContactCategory.Parameters.AddWithValue("@ContactCategoryID", Convert.ToInt32(liContactCategoryID.Value.ToString()));
                         objCmdContactCategory.ExecuteNonQuery();
                     }
@@ -240,7 +240,7 @@ public partial class MultiUserAddressBook_Admin_Panel_Contact_ContactAddEdit : S
                 //SqlCommand objCmdContactCategoryDelete = objConn.CreateCommand();
                 //objCmdContactCategoryDelete.CommandType = CommandType.StoredProcedure;
                 //objCmdContactCategoryDelete.CommandText = "PR_ContactWiseContactCategory_DeleteByContactID";
-                //objCmdContactCategoryDelete.Parameters.AddWithValue("@ContactID", Request.QueryString["ContactID"].ToString().Trim());
+                //objCmdContactCategoryDelete.Parameters.AddWithValue("@ContactID", RouteData.Values["ContactID"].ToString().Trim());
                 //objCmdContactCategoryDelete.Parameters.AddWithValue("@UserID", Session["UserID"]);
                 //objCmdContactCategoryDelete.ExecuteNonQuery();
 

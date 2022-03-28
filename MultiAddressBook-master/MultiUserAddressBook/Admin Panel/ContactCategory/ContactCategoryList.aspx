@@ -19,7 +19,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-2">
-                     <asp:HyperLink runat="server" ID="hlAddState" Text="Add new ContactCategory" CssClass="btn btn-warning" NavigateUrl="~/AdminPanel/ContactCategoryAdd"></asp:HyperLink>
+                     <asp:HyperLink runat="server" ID="hlAddState" Text="Add new ContactCategory" CssClass="btn btn-warning" NavigateUrl="~/AdminPanel/ContactCategory/Add"></asp:HyperLink>
                 </div>
                 <div class="col-md-10">
                    
@@ -44,7 +44,7 @@
 
                         <asp:TemplateField HeaderText="Edit">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/AdminPanel/ContactCategoryEdit?ContactCategoryID="+Eval("ContactCategoryID").ToString().Trim() %>'>
+                                <asp:HyperLink runat="server" ID="hlEdit" Text="Edit" CssClass="btn btn-info btn btn-sm" NavigateUrl='<%#"~/AdminPanel/ContactCategory/Edit/"+EncryptionDecryption.Encode(Eval("ContactCategoryID").ToString().Trim()) %>'>
                                 
                                 </asp:HyperLink>
                             </ItemTemplate>

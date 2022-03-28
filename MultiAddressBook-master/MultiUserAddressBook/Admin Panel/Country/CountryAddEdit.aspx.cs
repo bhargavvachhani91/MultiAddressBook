@@ -14,15 +14,17 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        
+        
         if (!IsPostBack)
         {
 
 
-            if (Request.QueryString["CountryID"] != null)
+            if (RouteData.Values ["CountryID"] != null)
             {
                 lblMessage.ForeColor = Color.AliceBlue;
-                lblMessage.Text = "Edit Mode | CountryID " + Request.QueryString["CountryID"].Trim();
-                FillControls(Convert.ToInt32(Request.QueryString["CountryID"].Trim()));
+                lblMessage.Text = "Edit Mode | CountryID " + RouteData.Values ["CountryID"];
+                FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["CountryID"].ToString().Trim())));
             }
             else
             {
@@ -107,10 +109,11 @@ public partial class MultiUserAddressBook_Admin_Panel_Country_CountryAddEdit : S
 
     #region Button : cancel
 
-    /*protected void btnCancel_Click(object sender, EventArgs e)
+    protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/MultiUserAddressBook/Admin Panel/Country/CountryList.aspx", true);
-    }*/
+        Response.Redirect("~/AdminPanel/Country/List", true);
+    }
+    
     #endregion Button : cancel
 
     #region Fill Controls

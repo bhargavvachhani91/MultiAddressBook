@@ -20,11 +20,11 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
 
             FillDropDownList();
 
-            if (Request.QueryString["CityID"] != null)
+            if (RouteData.Values["CityID"] != null)
             {
                 lblMessege.ForeColor = Color.Green;
-                lblMessege.Text = "Edit Mode | CityID " + Request.QueryString["CityID"].Trim();
-                FillControls(Convert.ToInt32(Request.QueryString["CityID"].Trim()));
+                lblMessege.Text = "Edit Mode | CityID " + RouteData.Values["CityID"];
+                FillControls(Convert.ToInt32(EncryptionDecryption.Decode(RouteData.Values["CityID"].ToString().Trim())));
             }
             else
             {
@@ -98,15 +98,15 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
 
 
 
-        if (Request.QueryString["CityID"] != null)
+        if (RouteData.Values["CityID"] != null)
         {
 
             #region Edit Mode
             //Edit Mode
-            objCmd.Parameters.AddWithValue("@CityID", Request.QueryString["CityID"].ToString().Trim());
+            objCmd.Parameters.AddWithValue("@CityID", RouteData.Values["CityID"].ToString().Trim());
             objCmd.CommandText = "[PR_City_UpdateByPK]";
             objCmd.ExecuteNonQuery();
-            Response.Redirect("~/AdminPanel/CityList", true);
+            Response.Redirect("~/AdminPanel/City/List", true);
             #endregion Edit Mode
         }
         else
@@ -182,7 +182,7 @@ public partial class MultiUserAddressBook_Admin_Panel_City_CityAddEdit : System.
     #region Button : Cancel
     protected void btnCancel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/AdminPanel/CityList", true);
+        Response.Redirect("~/AdminPanel/City/List", true);
     }
     #endregion Button : Cancel
 
